@@ -12,7 +12,7 @@
 		html { height:100%; }
 		body { height:100%; overflow:hidden; margin:0; padding:0; font-family:Arial, Helvetica, sans-serif; font-size:16px; color:#FFFFFF; background-color:#000000; }
 	</style>
-    <title>My First Project</title>
+    <title>Bostion Scientific Office WebVR</title>
     <script src="playcanvas-stable.min.js"></script>
     <script src="__settings__.js"></script>
 </head>
@@ -35,7 +35,35 @@
     <div class="ui-layer1">
         <!-- 这里可以放置UI元素，如按钮、导航等 -->
         <!-- <h1>UI层</h1> -->
-		<img class="image-logo" src="images/logo.png" /></div>
+		<img class="image-logo" src="images/logo.png" />
+    </div>
+    <div id="ui-layer3" class="ui-layer3">
+        <div class="dropdown-container">
+            <div class="dropdown" >
+                <div style="display: flex;">
+                    <button class="dropbtn" onclick="toggleDropdown('dropdown1')">协同工作空间</button>
+                    <div><img style=" padding: 2px;" src="images/Frame.png"></div> 
+                </div>
+                <div class="dropdown-content" id="dropdown1">
+                  <a href="#">会议室</a>
+                  <a href="#">多功能会议室</a>
+                  <a href="#">小组会议室</a>
+                  <a href="#">电话间</a>
+                </div>
+              </div>
+    
+              <div class="dropdown" >
+                <div style="display: flex;">
+                    <button class="dropbtn" onclick="toggleDropdown('dropdown2')">创新空间办公区</button>
+                    <div><img style=" padding: 2px;" src="images/Frame.png"></div>
+                </div>
+                <div class="dropdown-content" id="dropdown2">
+                  <a href="#">灵活办公区域</a>
+                  <a href="#">讨论区</a>
+                </div>
+              </div>
+        </div>
+    </div>
     <div id="ui-layer2" class="ui-layer2">
         <!-- 中文按钮 -->
         <div id="chinese-button" class="button chinese-button" onclick="on_chinese_callback()">
@@ -70,7 +98,9 @@
             var canvas = document.getElementById("canvas-layer");
             canvas.style.display="flex";
             var ui_layer2 = document.getElementById("ui-layer2")
+            var ui_layer3 = document.getElementById("ui-layer3")
             ui_layer2.style.display = "none";
+            ui_layer3.style.display = "flex";
         }
 
         function on_english_callback(){
@@ -78,6 +108,12 @@
             canvas.style.display="flex";
             var ui_layer2 = document.getElementById("ui-layer2")
             ui_layer2.style.display = "none";
+        }
+
+        function toggleDropdown(dropdownId) {
+            console.log(dropdownId);
+            var dropdownContent = document.getElementById(dropdownId);
+            dropdownContent.style.display = (dropdownContent.style.display === 'block') ? 'none' : 'block';
         }
 	</script>
 	<script src="tour.js"></script>
