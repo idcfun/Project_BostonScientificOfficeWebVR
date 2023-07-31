@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+<head>
+    <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover' />
+    <meta charset='utf-8'>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="index_styles.css">
+    <link rel="manifest" href="manifest.json">
+	<style>
+		@-ms-viewport { width:device-width; }
+		@media only screen and (min-device-width:800px) { html { overflow:hidden; } }
+		html { height:100%; }
+		body { height:100%; overflow:hidden; margin:0; padding:0; font-family:Arial, Helvetica, sans-serif; font-size:16px; color:#FFFFFF; background-color:#000000; }
+	</style>
+    <title>My First Project</title>
+    <script src="playcanvas-stable.min.js"></script>
+    <script src="__settings__.js"></script>
+</head>
+<body>
+	<!-- 加载层 -->
+   <div class="loading-container" id="loadingContainer">
+        <div>
+            <!-- 添加图片 -->
+            <div><img src="images/loading-logo.png" alt="Center Image" class="center-image"></div>
+            <!-- 进度条容器 -->
+            <div class="progress-bar-container">
+                <!-- 进度条背景图片 -->
+                <div class="progress-bar-background"></div>
+                <!-- 进度条前景图片 -->
+                <div class="progress-bar-foreground" id="progressBar"></div>
+            </div>
+        </div>
+    </div>
+	<!-- UI层 -->
+    <div class="ui-layer1">
+        <!-- 这里可以放置UI元素，如按钮、导航等 -->
+        <!-- <h1>UI层</h1> -->
+		<img class="image-logo" src="images/logo.png" /></div>
+    <div id="ui-layer2" class="ui-layer2">
+        <!-- 中文按钮 -->
+        <div id="chinese-button" class="button chinese-button" onclick="on_chinese_callback()">
+            <!-- <img src="images/button-bg.png" alt="Chinese Button" width="30" height="30"> -->
+            <span>中文</span>
+        </div>
+
+        <!-- 英文按钮 -->
+        <div id="english-button" class="button english-button" onclick="on_english_callback()">
+            <!-- <img src="images/button-bg.png" alt="English Button" width="30" height="30"> -->
+            <span>English</span>
+        </div></div>  
+    <!-- canvas层 -->
+    <div id="canvas-layer" class="canvas-layer"></div>
+    <!-- 背景图片层 -->
+    <div class="background-layer"></div>
+	<div id="pano" class="pano-layer"></div>
+	<script>
+		// 监听来自PlayCanvas的消息
+		window.addEventListener('message', function(event) {
+			// 仅接受来自指定域的消息，以增强安全性
+			// 如果PlayCanvas和外层网页在同一域下，则可以省略此检查
+			// 这里的origin应该替换为PlayCanvas所在的域名
+			console.log(event);
+			
+			var newDiv = document.getElementById("pano");
+			newDiv.style.display = "block"
+			embedpano({swf:"tour.swf", xml:"tour.xml", target:"pano", html5:"auto", mobilescale:1.0, passQueryParameters:true});
+		});
+
+        function on_chinese_callback(){
+            var canvas = document.getElementById("canvas-layer");
+            canvas.style.display="flex";
+            var ui_layer2 = document.getElementById("ui-layer2")
+            ui_layer2.style.display = "none";
+        }
+
+        function on_english_callback(){
+            var canvas = document.getElementById("canvas-layer");
+            canvas.style.display="flex";
+            var ui_layer2 = document.getElementById("ui-layer2")
+            ui_layer2.style.display = "none";
+        }
+	</script>
+	<script src="tour.js"></script>
+    <script src="__modules__.js"></script>
+    <script src="__start__.js"></script>
+    <script src="__loading__.js"></script>
+	
+</body>
+</html>
