@@ -45,10 +45,10 @@
                     <div style="margin-top:6px"><img  id="dropdown1-img" style=" padding: 2px;" src="images/Frame.png"></div> 
                 </div>
                 <div class="dropdown-content" id="dropdown1">
-                  <a href="#">会议室</a>
-                  <a href="#">多功能会议室</a>
-                  <a href="#">小组会议室</a>
-                  <a href="#">电话间</a>
+                  <a href="#" onclick='handleClick(1)'>会议室</a>
+                  <a href="#" onclick='handleClick(2)'>多功能会议室</a>
+                  <a href="#" onclick='handleClick(4)'>小组会议室</a>
+                  <a href="#" onclick='handleClick(5)'>电话间</a>
                 </div>
               </div>
     
@@ -58,8 +58,8 @@
                     <div style="margin-top:6px"><img id="dropdown2-img" style=" padding: 2px;" src="images/Frame.png"></div>
                 </div>
                 <div class="dropdown-content" id="dropdown2">
-                  <a href="#">灵活办公区域</a>
-                  <a href="#">讨论区</a>
+                  <a href="#" onclick='handleClick(3)'>灵活办公区域</a>
+                  <a href="#" onclick='handleClick(0)'>讨论区</a>
                 </div>
               </div>
         </div>
@@ -88,10 +88,12 @@
 			// 如果PlayCanvas和外层网页在同一域下，则可以省略此检查
 			// 这里的origin应该替换为PlayCanvas所在的域名
 			console.log(event);
-			
-			var newDiv = document.getElementById("pano");
-			newDiv.style.display = "block"
-			//embedpano({swf:"tour.swf", xml:"tour.xml", target:"pano", html5:"auto", mobilescale:1.0, passQueryParameters:true});
+			if(event.data.entityName==='cj')
+			{
+                var newDiv = document.getElementById("pano");
+                newDiv.style.display = "block"
+                embedpano({swf:"tour.swf", xml:"tour.xml", target:"pano", html5:"auto", mobilescale:1.0, passQueryParameters:true});
+            }
 		});
 
         function on_chinese_callback(){
@@ -121,6 +123,15 @@
                 dropdownContent.style.display = 'block';
                 dropdownImg.src = 'images/Frame_1.png';
             }
+        }
+
+        function handleClick(identifier) {
+            // 在点击时执行的操作，根据传递的标识参数执行不同的逻辑
+            var message = {
+            msgType: 'billboard',
+            index: identifier
+            };
+            window.parent.postMessage(message, "/");
         }
 	</script>
 	<script src="tour.js"></script>
