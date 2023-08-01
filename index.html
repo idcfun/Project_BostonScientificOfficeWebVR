@@ -42,7 +42,7 @@
             <div class="dropdown" >
                 <div style="display: flex;">
                     <button class="dropbtn" onclick="toggleDropdown('dropdown1')">协同工作空间</button>
-                    <div><img style=" padding: 2px;" src="images/Frame.png"></div> 
+                    <div style="margin-top:6px"><img  id="dropdown1-img" style=" padding: 2px;" src="images/Frame.png"></div> 
                 </div>
                 <div class="dropdown-content" id="dropdown1">
                   <a href="#">会议室</a>
@@ -55,7 +55,7 @@
               <div class="dropdown" >
                 <div style="display: flex;">
                     <button class="dropbtn" onclick="toggleDropdown('dropdown2')">创新空间办公区</button>
-                    <div><img style=" padding: 2px;" src="images/Frame.png"></div>
+                    <div style="margin-top:6px"><img id="dropdown2-img" style=" padding: 2px;" src="images/Frame.png"></div>
                 </div>
                 <div class="dropdown-content" id="dropdown2">
                   <a href="#">灵活办公区域</a>
@@ -91,7 +91,7 @@
 			
 			var newDiv = document.getElementById("pano");
 			newDiv.style.display = "block"
-			embedpano({swf:"tour.swf", xml:"tour.xml", target:"pano", html5:"auto", mobilescale:1.0, passQueryParameters:true});
+			//embedpano({swf:"tour.swf", xml:"tour.xml", target:"pano", html5:"auto", mobilescale:1.0, passQueryParameters:true});
 		});
 
         function on_chinese_callback(){
@@ -111,9 +111,16 @@
         }
 
         function toggleDropdown(dropdownId) {
-            console.log(dropdownId);
             var dropdownContent = document.getElementById(dropdownId);
-            dropdownContent.style.display = (dropdownContent.style.display === 'block') ? 'none' : 'block';
+            var dropdownImg = document.getElementById(dropdownId + '-img');
+            if(dropdownContent.style.display === 'block'){
+                dropdownContent.style.display = 'none';
+                dropdownImg.src = 'images/Frame.png';
+            }
+            else{
+                dropdownContent.style.display = 'block';
+                dropdownImg.src = 'images/Frame_1.png';
+            }
         }
 	</script>
 	<script src="tour.js"></script>
