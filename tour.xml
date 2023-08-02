@@ -9,12 +9,12 @@
 	               maps_google_api_key=""
 	               maps_zoombuttons="false"
 	               gyro="true"
-	               webvr="true"
+	               webvr="false"
 	               webvr_gyro_keeplookingdirection="false"
 	               webvr_prev_next_hotspots="true"
 	               littleplanetintro="true"
-	               title="true"
-	               thumbs="true"
+	               title="false"
+	               thumbs="false"
 	               thumbs_width="120" thumbs_height="80" thumbs_padding="10" thumbs_crop="0|40|240|160"
 	               thumbs_opened="false"
 	               thumbs_text="false"
@@ -91,7 +91,7 @@
 				<cube url="panos/entrance.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
 			</level>
 		</image>
-		<hotspot name="spot1" style="skin_hotspotstyle" ath="-1.808" atv="21.522" linkedscene="scene_frontdesk2" />
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-1.808" atv="21.522" rx='60' linkedscene="scene_frontdesk2" />
 
 	</scene>
 
@@ -116,7 +116,7 @@
 		</image>
 		<hotspot name="spot1" style="skin_hotspotstyle" ath="-47.199" atv="17.462" ry="60" rotate="-75" linkedscene="scene_officearea23" />
 		<hotspot name="spot2" style="skin_hotspotstyle" ath="41.241" atv="19.076" ry="60" rotate="75" linkedscene="scene_integration3" />
-		<hotspot name="spot3" style="skin_hotspotstyle" ath="129.436" atv="23.916" linkedscene="scene_meetingroom3" />
+		<hotspot name="spot3" style="skin_hotspotstyle" ath="129.436" atv="23.916" rx="60" linkedscene="scene_meetingroom3" />
 
 	</scene>
 	
@@ -137,8 +137,8 @@
 				<cube url="panos/ebar22.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
 			</level>
 		</image>
-		<hotspot name="spot1" style="skin_hotspotstyle" ath="138.838" atv="34.895" linkedscene="scene_tearoom21" />
-		<hotspot name="spot2" style="skin_hotspotstyle" ath="-144.879" atv="36.891" linkedscene="scene_officearea23" />
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="138.838" atv="34.895" rx='60'  linkedscene="scene_tearoom21" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="-144.879" atv="36.891"  rx='60'  linkedscene="scene_officearea23" />
 
 	</scene>
 
@@ -160,7 +160,7 @@
 				<cube url="panos/integration3.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
 			</level>
 		</image>
-		<hotspot name="spot1" style="skin_hotspotstyle" ath="2.971" atv="32.025" linkedscene="scene_officearea4" />
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="2.971" atv="32.025" rx='60' linkedscene="scene_officearea4" />
 
 	</scene>
 
@@ -181,8 +181,8 @@
 				<cube url="panos/integration6.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
 			</level>
 		</image>
-		<hotspot name="spot1" style="skin_hotspotstyle" ath="-29.972" atv="47.891" linkedscene="scene_office7" />
-		<hotspot name="spot2" style="skin_hotspotstyle" ath="54.407" atv="23.410" linkedscene="scene_integration11" />
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-29.972" atv="47.891" rx='60' linkedscene="scene_office7" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="54.407" atv="23.410" rx='60' linkedscene="scene_integration11" />
 
 	</scene>
 
@@ -203,8 +203,8 @@
 				<cube url="panos/integration9.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
 			</level>
 		</image>
-		<hotspot name="spot1" style="skin_hotspotstyle" ath="-106.374" atv="12.265" linkedscene="scene_integration11" />
-		<hotspot name="spot2" style="skin_hotspotstyle" ath="-92.883" atv="25.268" linkedscene="scene_office10" />
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-106.374" atv="12.265" rx='60' linkedscene="scene_integration11" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="-89.749" atv="27.368" rz='80' ry='60' linkedscene="scene_integration11" />
 
 	</scene>
 
@@ -225,8 +225,8 @@
 				<cube url="panos/integration11.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
 			</level>
 		</image>
-		<hotspot name="spot1" style="skin_hotspotstyle" ath="-33.636" atv="32.152" linkedscene="scene_integration12" />
-		<hotspot name="spot2" style="skin_hotspotstyle" ath="-73.298" atv="43.120" linkedscene="scene_printingarea13" />
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-33.636" atv="32.152" rx='60' linkedscene="scene_integration12" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="-73.298" atv="43.120"  rx='45' rz='-45' linkedscene="scene_printingarea13" />
 
 	</scene>
 
@@ -247,9 +247,9 @@
 				<cube url="panos/integration12.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
 			</level>
 		</image>
-		<hotspot name="spot1" style="skin_hotspotstyle" ath="7.418" atv="12.785" linkedscene="scene_integration11" />
-		<hotspot name="spot2" style="skin_hotspotstyle" ath="-5.293" atv="23.551" linkedscene="scene_officearea14" />
-		<hotspot name="spot3" style="skin_hotspotstyle" ath="25.960" atv="21.213" linkedscene="scene_officearea14" />
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="7.418" atv="12.785"  rx='60'  linkedscene="scene_integration11" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="-5.293" atv="23.551"  ry='60' rz='-80' linkedscene="scene_officearea14" />
+		<hotspot name="spot3" style="skin_hotspotstyle" ath="25.960" atv="21.213"  ry='60' rz='80' linkedscene="scene_officearea14" />
 
 	</scene>
 
@@ -270,9 +270,9 @@
 				<cube url="panos/integration16.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
 			</level>
 		</image>
-		<hotspot name="spot1" style="skin_hotspotstyle" ath="-144.292" atv="29.625" linkedscene="scene_officearea17" />
-		<hotspot name="spot2" style="skin_hotspotstyle" ath="124.183" atv="25.525" linkedscene="scene_officearea18" />
-		<hotspot name="spot3" style="skin_hotspotstyle" ath="6.411" atv="48.606" linkedscene="scene_meetingroom1" />
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-144.292" atv="29.625"  rx='60'  linkedscene="scene_officearea17" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="124.183" atv="25.525"  rx='60'  linkedscene="scene_officearea18" />
+		<hotspot name="spot3" style="skin_hotspotstyle" ath="6.411" atv="48.606"  rx='60'  linkedscene="scene_meetingroom1" />
 
 	</scene>
 
@@ -293,8 +293,8 @@
 				<cube url="panos/integration19.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
 			</level>
 		</image>
-		<hotspot name="spot1" style="skin_hotspotstyle" ath="-19.960" atv="38.799" linkedscene="scene_restarea" />
-		<hotspot name="spot2" style="skin_hotspotstyle" ath="65.930" atv="22.297" linkedscene="scene_tearoom21" />
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-14.112" atv="37.622" rz='-90' ry='60'  linkedscene="scene_restarea" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="65.930" atv="22.297"   rx='60'  linkedscene="scene_tearoom21" />
 
 	</scene>
 
@@ -335,7 +335,7 @@
 				<cube url="panos/meetingroom1.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
 			</level>
 		</image>
-		<hotspot name="spot1" style="skin_hotspotstyle" ath="-80.139" atv="26.756" linkedscene="scene_officearea18" />
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-80.139" atv="26.756" rx='60'  linkedscene="scene_officearea18" />
 
 	</scene>
 
@@ -356,7 +356,7 @@
 				<cube url="panos/meetingroom2.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
 			</level>
 		</image>
-		<hotspot name="spot1" style="skin_hotspotstyle" ath="114.942" atv="28.510" linkedscene="scene_officearea18" />
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="114.942" atv="28.510" rx='60'  linkedscene="scene_officearea18" />
 
 	</scene>
 
@@ -377,7 +377,7 @@
 				<cube url="panos/meetingroom3.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
 			</level>
 		</image>
-		<hotspot name="spot1" style="skin_hotspotstyle" ath="10.783" atv="27.105" linkedscene="scene_frontdesk2" />
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="10.783" atv="27.105" rx="60" linkedscene="scene_frontdesk2" />
 
 	</scene>
 
@@ -462,7 +462,7 @@
 				<cube url="panos/office8.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
 			</level>
 		</image>
-		<hotspot name="spot1" style="skin_hotspotstyle" ath="56.079" atv="8.573" linkedscene="scene_integration9" />
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="56.079" atv="8.573" rx='60' linkedscene="scene_integration9" />
 
 	</scene>
 
@@ -483,8 +483,8 @@
 				<cube url="panos/office10.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
 			</level>
 		</image>
-		<hotspot name="spot1" style="skin_hotspotstyle" ath="172.437" atv="45.413" linkedscene="scene_integration6" />
-		<hotspot name="spot2" style="skin_hotspotstyle" ath="-150.346" atv="38.795" linkedscene="scene_integration11" />
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="172.437" atv="45.413" rx='60'  linkedscene="scene_integration6" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="-150.346" atv="38.795" rx='60'  linkedscene="scene_integration11" />
 
 	</scene>
 
@@ -505,7 +505,7 @@
 				<cube url="panos/office15.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
 			</level>
 		</image>
-		<hotspot name="spot1" style="skin_hotspotstyle" ath="-64.784" atv="35.565" linkedscene="scene_officearea14" />
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-64.784" atv="35.565" rx='60' linkedscene="scene_officearea14" />
 
 	</scene>
 
@@ -526,8 +526,8 @@
 				<cube url="panos/officearea4.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
 			</level>
 		</image>
-		<hotspot name="spot1" style="skin_hotspotstyle" ath="50.124" atv="21.525" linkedscene="scene_officearea5" />
-		<hotspot name="spot2" style="skin_hotspotstyle" ath="134.089" atv="13.118" linkedscene="scene_integration6" />
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="50.124" atv="21.525" rx='60' linkedscene="scene_officearea5" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="134.089" atv="13.118" rx='60' linkedscene="scene_integration6" />
 
 	</scene>
 
@@ -570,9 +570,9 @@
 				<cube url="panos/officearea14.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
 			</level>
 		</image>
-		<hotspot name="spot1" style="skin_hotspotstyle" ath="60.218" atv="16.710" linkedscene="scene_integration12" />
-		<hotspot name="spot2" style="skin_hotspotstyle" ath="-44.640" atv="19.858" linkedscene="scene_officearea17" />
-		<hotspot name="spot3" style="skin_hotspotstyle" ath="-102.663" atv="12.633" linkedscene="scene_office15" />
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="60.218" atv="16.710"  rx='60'  linkedscene="scene_integration12" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="-45.625" atv="22.857" rz='-75' ry='60'  linkedscene="scene_officearea17" />
+		<hotspot name="spot3" style="skin_hotspotstyle" ath="-102.663" atv="12.633"  rx='60'  linkedscene="scene_office15" />
 
 	</scene>
 
@@ -615,11 +615,11 @@
 				<cube url="panos/officearea18.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
 			</level>
 		</image>
-		<hotspot name="spot1" style="skin_hotspotstyle" ath="-12.575" atv="7.915" linkedscene="scene_meetingroom5" />
-		<hotspot name="spot2" style="skin_hotspotstyle" ath="13.845" atv="9.855" linkedscene="scene_meetingroom2" />
-		<hotspot name="spot3" style="skin_hotspotstyle" ath="70.234" atv="7.902" linkedscene="scene_meetingroom5" />
-		<hotspot name="spot4" style="skin_hotspotstyle" ath="22.464" atv="24.531" linkedscene="scene_integration19" />
-		<hotspot name="spot5" style="skin_hotspotstyle" ath="58.022" atv="23.896" linkedscene="scene_integration16" />
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-12.575" atv="7.915" rx='60'  linkedscene="scene_meetingroom5" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="13.845" atv="9.855" rx='60'  linkedscene="scene_meetingroom2" />
+		<hotspot name="spot3" style="skin_hotspotstyle" ath="70.234" atv="7.902" rx='60'  linkedscene="scene_meetingroom5" />
+		<hotspot name="spot4" style="skin_hotspotstyle" ath="23.670" atv="21.815"  ry='60' rz='-80'  linkedscene="scene_integration19" />
+		<hotspot name="spot5" style="skin_hotspotstyle" ath="55.083" atv="21.119" ry='60' rz='80'  linkedscene="scene_integration16" />
 
 	</scene>
 
@@ -640,8 +640,8 @@
 				<cube url="panos/officearea23.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
 			</level>
 		</image>
-		<hotspot name="spot1" style="skin_hotspotstyle" ath="127.353" atv="18.975" linkedscene="scene_officearea24" />
-		<hotspot name="spot2" style="skin_hotspotstyle" ath="-116.146" atv="8.739" linkedscene="scene_ebar22" />
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="127.353" atv="18.975" rx='60'  linkedscene="scene_officearea24" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="-116.146" atv="8.739" rx='60'  linkedscene="scene_ebar22" />
 
 	</scene>
 
@@ -662,7 +662,7 @@
 				<cube url="panos/officearea24.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
 			</level>
 		</image>
-		<hotspot name="spot1" style="skin_hotspotstyle" ath="-33.423" atv="31.178" linkedscene="scene_officearea23" />
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-33.423" atv="31.178" rx='60'  linkedscene="scene_officearea23" />
 
 	</scene>
 
@@ -683,7 +683,7 @@
 				<cube url="panos/printingarea13.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
 			</level>
 		</image>
-		<hotspot name="spot1" style="skin_hotspotstyle" ath="168.258" atv="17.519" linkedscene="scene_integration12" />
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="168.258" atv="17.519" rx='60'  linkedscene="scene_integration12" />
 
 	</scene>
 
@@ -704,7 +704,7 @@
 				<cube url="panos/restarea.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
 			</level>
 		</image>
-		<hotspot name="spot1" style="skin_hotspotstyle" ath="-151.139" atv="47.613" linkedscene="scene_tearoom21" />
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-151.139" atv="47.613" rx='60' linkedscene="scene_tearoom21" />
 
 	</scene>
 
@@ -725,8 +725,8 @@
 				<cube url="panos/tearoom21.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
 			</level>
 		</image>
-		<hotspot name="spot1" style="skin_hotspotstyle" ath="107.436" atv="16.395" linkedscene="scene_ebar22" />
-		<hotspot name="spot2" style="skin_hotspotstyle" ath="-117.266" atv="27.430" linkedscene="scene_integration19" />
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="107.436" atv="16.395" rx='60'  linkedscene="scene_ebar22" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="-117.266" atv="27.430" rx='60'  linkedscene="scene_integration19" />
 
 	</scene>
 
