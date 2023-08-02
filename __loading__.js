@@ -41,13 +41,16 @@ pc.script.createLoadingScreen(function (app) {
      
             if(value>=1);
             {
-                var loadingcontainer = document.getElementById('loading-container');
-                loadingcontainer.style.display = "none";
-
-                var ui1 = document.getElementById('ui-layer1');
-                ui1.style.display = "flex";
-                var ui2 = document.getElementById('ui-layer2');
-                ui2.style.display = "flex";
+                setTimeout(function(){
+                    var loadingcontainer = document.getElementById('loading-container');
+                    loadingcontainer.style.display = "none";
+    
+                    var ui1 = document.getElementById('ui-layer1');
+                    ui1.style.display = "flex";
+                    var ui2 = document.getElementById('ui-layer2');
+                    ui2.style.display = "flex";
+                },100);
+                
             }
         }
     };

@@ -1,27 +1,63 @@
 <!doctype html>
 <html>
 <head>
-    <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover' />
+    <!-- <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover' /> -->
     <meta charset='utf-8'>
     <link rel="stylesheet" type="text/css" href="styles.css">
     <link rel="stylesheet" type="text/css" href="index_styles.css">
     <link rel="manifest" href="manifest.json">
-	<style>
+	<!-- <style>
 		@-ms-viewport { width:device-width; }
 		@media only screen and (min-device-width:800px) { html { overflow:hidden; } }
 		html { height:100%; }
 		body { height:100%; overflow:hidden; margin:0; padding:0; font-family:Arial, Helvetica, sans-serif; font-size:16px; color:#FFFFFF; background-color:#000000; }
-	</style>
+	</style> -->
+    <!-- <style>
+        /* 默认样式，适用于大于等于 1920x1080 分辨率的设备 */
+        html {
+          font-size: 16px; /* 默认字体大小，适配 1920x1080 分辨率 */
+        }
+      
+        /* 媒体查询，适用于小于 1920x1080 分辨率的设备 */
+        @media screen and (max-width: 1920px) {
+          html {
+            font-size: 12px; /* 适配 1280x720 分辨率，根据实际需求设置 */
+          }
+        }
+      
+        /* 更小的分辨率设备，适用于小于 1280x720 分辨率的设备 */
+        @media screen and (max-width: 1280px) {
+          html {
+            font-size: 8px; /* 适配更小分辨率，根据实际需求设置 */
+          }
+        }
+      
+        /* 其他媒体查询和适配样式可以继续添加 */
+      </style> -->
     <title>Bostion Scientific Office WebVR</title>
+    <script>
+       
+        function resize(){
+            const htmlEl = document.getElementsByTagName("html")[0];
+            let e = htmlEl.getBoundingClientRect().width;
+            e = Math.round(e);
+            // e = e > 1200 ? 1200 : e;
+            let fontSize = e / 750 * 100;
+            htmlEl.style.fontSize = fontSize + "px"
+        }
+        resize();
+        window.addEventListener('resize', resize);
+    </script>
     <script src="playcanvas-stable.min.js"></script>
     <script src="__settings__.js"></script>
+    
 </head>
 <body>
 	<!-- 加载层 -->
    <div class="loading-container" id="loading-container">
         <div>
             <!-- 添加图片 -->
-            <div><img src="images/loading-logo.png" alt="Center Image" class="center-image"></div>
+            <div><img style="width: 3.043rem; height: auto;" src="images/loading-logo.png" alt="Center Image" class="center-image"></div>
             <!-- 进度条容器 -->
             <div class="progress-bar-container">
                 <!-- 进度条背景图片 -->
