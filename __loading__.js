@@ -38,11 +38,16 @@ pc.script.createLoadingScreen(function (app) {
         if (bar) {
             value = Math.min(1, Math.max(0, value));
             bar.style.width = value * 100 + '%';
-
-            if(bar>=1);
+     
+            if(value>=1);
             {
-                var loadingcontainer = document.getElementById('loadingContainer');
+                var loadingcontainer = document.getElementById('loading-container');
                 loadingcontainer.style.display = "none";
+
+                var ui1 = document.getElementById('ui-layer1');
+                ui1.style.display = "flex";
+                var ui2 = document.getElementById('ui-layer2');
+                ui2.style.display = "flex";
             }
         }
     };

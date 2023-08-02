@@ -18,7 +18,7 @@
 </head>
 <body>
 	<!-- 加载层 -->
-   <div class="loading-container" id="loadingContainer">
+   <div class="loading-container" id="loading-container">
         <div>
             <!-- 添加图片 -->
             <div><img src="images/loading-logo.png" alt="Center Image" class="center-image"></div>
@@ -32,7 +32,7 @@
         </div>
     </div>
 	<!-- UI层 -->
-    <div class="ui-layer1">
+    <div id="ui-layer1" class="ui-layer1">
         <!-- 这里可以放置UI元素，如按钮、导航等 -->
         <!-- <h1>UI层</h1> -->
 		<img class="image-logo" src="images/logo.png" />
@@ -45,10 +45,15 @@
                     <div style="margin-top:6px"><img  id="dropdown1-img" style=" padding: 2px;" src="images/Frame.png"></div> 
                 </div>
                 <div class="dropdown-content" id="dropdown1">
-                  <a href="#" onclick='handleClick(1)'>会议室</a>
-                  <a href="#" onclick='handleClick(2)'>多功能会议室</a>
-                  <a href="#" onclick='handleClick(4)'>小组会议室</a>
-                  <a href="#" onclick='handleClick(5)'>电话间</a>
+                    <div class="dropdown-content-menu">
+                        <a href="#" onclick='handleClick(0)'>会议室</a>
+                        <a href="#" onclick='handleClick(1)'>多功能会议室</a>
+                        <a href="#" onclick='handleClick(2)'>小组会议室</a>
+                        <a href="#" onclick='handleClick(3)'>电话间</a>
+                    </div>
+                    <div id="dropdown-content-p1" class="dropdown-content-p">
+                        大连办公室共有9间会议室，以GBS 9个位置命名，每间会议室均配备了智能预约管理系统，及电视屏幕，投影仪等硬件设施，配有智能照明系统，可通过墙壁上的控光功能设备多段式调节控制灯光，适合不同场景的及天气发生变化时的灯光照明需求，智能维持室内照明的稳定性。
+                    </div>
                 </div>
               </div>
     
@@ -58,8 +63,13 @@
                     <div style="margin-top:6px"><img id="dropdown2-img" style=" padding: 2px;" src="images/Frame.png"></div>
                 </div>
                 <div class="dropdown-content" id="dropdown2">
-                  <a href="#" onclick='handleClick(3)'>灵活办公区域</a>
-                  <a href="#" onclick='handleClick(0)'>讨论区</a>
+                    <div class="dropdown-content-menu">
+                        <a href="#" onclick='handleClick(4)'>灵活办公区域</a>
+                        <a href="#" onclick='handleClick(5)'>讨论区</a>
+                    </div>
+                    <div id="dropdown-content-p2" class="dropdown-content-p">
+                        灵活办公区域适合工作日程安排灵活的远程和销售同事，该区域配备了人体工学座椅，灵活的收纳储物，满足舒适办公的多种需求。
+                    </div>
                 </div>
               </div>
         </div>
@@ -82,16 +92,25 @@
     <div class="background-layer"></div>
 	<div id="pano" class="pano-layer"></div>
 	<script>
+        var pArr = [
+            '大连办公室共有9间会议室，以GBS 9个位置命名，每间会议室均配备了智能预约管理系统，及电视屏幕，投影仪等硬件设施，配有智能照明系统，可通过墙壁上的控光功能设备多段式调节控制灯光，适合不同场景的及天气发生变化时的灯光照明需求，智能维持室内照明的稳定性。',
+            '连 培训室采用高效的功能分区和灵活的空间设计，可以作为独立会议室使用，也可以根据需求与马尔堡进行合并打通，作为可容纳约40人的大型会议室使用。另外多功能空间内的智能设备，满足线上线下多种会议需求。',
+            '一间小组会议室最多容纳4人，无需提前预定即可用作临时会议，适合人数较少快速召集的小组会议、跨部门协作或商务洽谈。',
+            '大连办公室共有8个电话间，无需预订均可使用，既可以满足2人小型会议功能也支持线上会议或线下快速讨论使用，电话间使用隔音玻璃，在通话过程中既可以保证通话的隐私也可以保证办公区域安静的工作环境。',
+            '灵活办公区域适合工作日程安排灵活的远程和销售同事，该区域配备了人体工学座椅，灵活的收纳储物，满足舒适办公的多种需求。',
+            '办公室设舒适温馨的开放讨论区，提供了交流探讨或稍事休憩的场所。鼓励合作、自由交换思想的环境氛围，更能激发工作热情，可根据个入需求自由选择工作或休息，随时随地轻松办公。另提供图书交换及借阅，静谧而又令人愉悦的舒缓氛围会给予喜欢读书的人更多的灵感启发并专注千自己的思绪和工作。'
+        ];
 		// 监听来自PlayCanvas的消息
 		window.addEventListener('message', function(event) {
 			// 仅接受来自指定域的消息，以增强安全性
 			// 如果PlayCanvas和外层网页在同一域下，则可以省略此检查
 			// 这里的origin应该替换为PlayCanvas所在的域名
-			console.log(event);
 			if(event.data.entityName==='cj')
 			{
                 var newDiv = document.getElementById("pano");
                 newDiv.style.display = "block"
+                var ui3 = document.getElementById("ui-layer3");
+                ui3.style.display = 'none';
                 embedpano({swf:"tour.swf", xml:"tour.xml", target:"pano", html5:"auto", mobilescale:1.0, passQueryParameters:true});
             }
 		});
@@ -113,24 +132,44 @@
         }
 
         function toggleDropdown(dropdownId) {
+            
             var dropdownContent = document.getElementById(dropdownId);
             var dropdownImg = document.getElementById(dropdownId + '-img');
-            if(dropdownContent.style.display === 'block'){
+            if(dropdownContent.style.display === 'flex'){
                 dropdownContent.style.display = 'none';
                 dropdownImg.src = 'images/Frame.png';
             }
             else{
-                dropdownContent.style.display = 'block';
+                dropdownContent.style.display = 'flex';
                 dropdownImg.src = 'images/Frame_1.png';
+                if(dropdownId==='dropdown1')
+                {     
+                    var dropdown2 = document.getElementById('dropdown2');
+                    dropdown2.style.display='none';
+                }
+                else if(dropdownId==='dropdown2')
+                {
+                    var dropdown1 = document.getElementById('dropdown1');
+                    dropdown1.style.display='none';
+                }
             }
         }
 
-        function handleClick(identifier) {
+        function handleClick(index) {
             // 在点击时执行的操作，根据传递的标识参数执行不同的逻辑
             var message = {
             msgType: 'billboard',
-            index: identifier
+            index: index
             };
+
+            if(index<4){
+                var drop_p1 = document.getElementById('dropdown-content-p1');
+                drop_p1.innerText = pArr[index];
+            }else{
+                var drop_p2 = document.getElementById('dropdown-content-p2');
+                drop_p2.innerText = pArr[index];
+            }
+
             window.parent.postMessage(message, "/");
         }
 	</script>
