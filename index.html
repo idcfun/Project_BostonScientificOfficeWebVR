@@ -6,34 +6,6 @@
     <link rel="stylesheet" type="text/css" href="styles.css">
     <link rel="stylesheet" type="text/css" href="index_styles.css">
     <link rel="manifest" href="manifest.json">
-	<!-- <style>
-		@-ms-viewport { width:device-width; }
-		@media only screen and (min-device-width:800px) { html { overflow:hidden; } }
-		html { height:100%; }
-		body { height:100%; overflow:hidden; margin:0; padding:0; font-family:Arial, Helvetica, sans-serif; font-size:16px; color:#FFFFFF; background-color:#000000; }
-	</style> -->
-    <!-- <style>
-        /* 默认样式，适用于大于等于 1920x1080 分辨率的设备 */
-        html {
-          font-size: 16px; /* 默认字体大小，适配 1920x1080 分辨率 */
-        }
-      
-        /* 媒体查询，适用于小于 1920x1080 分辨率的设备 */
-        @media screen and (max-width: 1920px) {
-          html {
-            font-size: 12px; /* 适配 1280x720 分辨率，根据实际需求设置 */
-          }
-        }
-      
-        /* 更小的分辨率设备，适用于小于 1280x720 分辨率的设备 */
-        @media screen and (max-width: 1280px) {
-          html {
-            font-size: 8px; /* 适配更小分辨率，根据实际需求设置 */
-          }
-        }
-      
-        /* 其他媒体查询和适配样式可以继续添加 */
-      </style> -->
     <title>Bostion Scientific Office WebVR</title>
     <script>
        
@@ -112,16 +84,17 @@
     </div>
     <div id="ui-layer2" class="ui-layer2">
         <!-- 中文按钮 -->
-        <div id="chinese-button" class="button chinese-button" onclick="on_chinese_callback()">
+        <div id="chinese-button" class="button" onclick="on_chinese_callback()">
             <!-- <img src="images/button-bg.png" alt="Chinese Button" width="30" height="30"> -->
             <span>中文</span>
         </div>
 
         <!-- 英文按钮 -->
-        <div id="english-button" class="button english-button" onclick="on_english_callback()">
+        <div id="english-button" class="button" onclick="on_english_callback()">
             <!-- <img src="images/button-bg.png" alt="English Button" width="30" height="30"> -->
             <span>English</span>
-        </div></div>  
+        </div>
+    </div>  
     <!-- canvas层 -->
     <div id="canvas-layer" class="canvas-layer"></div>
     <!-- 背景图片层 -->
@@ -154,17 +127,21 @@
         function on_chinese_callback(){
             var canvas = document.getElementById("canvas-layer");
             canvas.style.display="flex";
-            var ui_layer2 = document.getElementById("ui-layer2")
-            var ui_layer3 = document.getElementById("ui-layer3")
-            ui_layer2.style.display = "none";
+            var ui_layer2 = document.getElementById("ui-layer2");
+            var ui_layer3 = document.getElementById("ui-layer3");
+            console.log(ui_layer2);
+            ui_layer2.style.display = 'none'
             ui_layer3.style.display = "flex";
         }
 
         function on_english_callback(){
             var canvas = document.getElementById("canvas-layer");
             canvas.style.display="flex";
-            var ui_layer2 = document.getElementById("ui-layer2")
-            ui_layer2.style.display = "none";
+            var ui_layer2 = document.getElementById("ui-layer2");
+            var ui_layer3 = document.getElementById("ui-layer3");
+            console.log(ui_layer2);
+            ui_layer2.style.display = 'none';
+            ui_layer3.style.display = "flex";
         }
 
         function toggleDropdown(dropdownId) {

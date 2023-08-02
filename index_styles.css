@@ -176,7 +176,7 @@ canvas {
     height: 0.6289rem;
     /* padding: 20px 20px; */
     border: none;
-    background-image: url('images/button-bg.png'); /* 设置按钮的背景图片 */
+    background-image: url('images/button-default.png'); /* 设置按钮的背景图片 */
     background-size: cover;
     background-position: center; /* 将背景图片居中 */
     color: white;
@@ -184,6 +184,10 @@ canvas {
     cursor: pointer;
     /* font-weight: bold; */
     margin: 100px; /* 按钮之间的间距 */
+}
+
+.button:hover{
+    background-image: url('images/button-selected.png'); 
 }
 
 /* 设置按钮文字样式 */
@@ -198,7 +202,7 @@ canvas {
     background-color: transparent;
     color: white;
     padding: 2px;
-    font-size: 16px;
+    font-size: 0.0938rem;
     border: none;
     cursor: pointer;
     font-family:"Microsoft YaHei";

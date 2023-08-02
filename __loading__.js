@@ -35,23 +35,27 @@ pc.script.createLoadingScreen(function (app) {
 
     var setProgress = function (value) {
         var bar = document.getElementById('progressBar');
+        var loadingcontainer = document.getElementById('loading-container');
         if (bar) {
             value = Math.min(1, Math.max(0, value));
             bar.style.width = value * 100 + '%';
-     
-            if(value>=1);
-            {
-                setTimeout(function(){
-                    var loadingcontainer = document.getElementById('loading-container');
-                    loadingcontainer.style.display = "none";
-    
-                    var ui1 = document.getElementById('ui-layer1');
-                    ui1.style.display = "flex";
-                    var ui2 = document.getElementById('ui-layer2');
-                    ui2.style.display = "flex";
-                },100);
+            if(value >= 1){
                 
             }
+            // if(value>=1 && loadingcontainer.style.display !== "none");
+            // {   
+            //     loadingcontainer.style.display = "none";
+            //     var ui1 = document.getElementById('ui-layer1');
+            //     ui1.style.display = "flex";
+            //     var ui2 = document.getElementById('ui-layer2');
+            //     ui2.style.display = 'flex';
+            //     // setTimeout(function(){
+                   
+            //     //     ui2.style.display = "flex";
+            //     //     console.log("setTimeout");
+            //     // },100);
+                
+            // }
         }
     };
 
