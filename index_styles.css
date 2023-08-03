@@ -68,6 +68,7 @@
     display: none;
     justify-content: center;
     align-items: center;
+    text-align: center;
     z-index: 6; /* 设置UI层的堆叠顺序为最上面 *//* 设置UI层的背景颜色，这里使用带有透明度的白色 */
 }
 
@@ -251,5 +252,20 @@ canvas {
     display: block;
     width: 70%;
   }
+
+.centered-images {
+    display: flex;
+    position: absolute;
+    left: 3.75rem;
+    top: 1.75rem;
+    flex-direction: column;
+    align-items: center;
+}
+
+.centered-images img {
+    display: block;
+    max-width: 100%;
+    margin-bottom: 10px;
+}
   
   

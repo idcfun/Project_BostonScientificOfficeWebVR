@@ -36,11 +36,16 @@ pc.script.createLoadingScreen(function (app) {
     var setProgress = function (value) {
         var bar = document.getElementById('progressBar');
         var loadingcontainer = document.getElementById('loading-container');
+        var ui2 = document.getElementById('ui-layer2');
+        var ui1 = document.getElementById('ui-layer1');
+        ui1.style.display = "flex";
+        ui2.style.display = 'flex';
         if (bar) {
             value = Math.min(1, Math.max(0, value));
             bar.style.width = value * 100 + '%';
             if(value >= 1){
-                
+                console.log(value);
+                loadingcontainer.style.display = "none";
             }
             // if(value>=1 && loadingcontainer.style.display !== "none");
             // {   
