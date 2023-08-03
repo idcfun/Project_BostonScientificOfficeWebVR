@@ -73,6 +73,32 @@
 		if(startactions !== null, startactions() );
 	</action>
 
+	<action name="do_crop_animation" scope="local" args="framewidth, frameheight, framerate">
+		<!-- define local variables -->
+		calc(local.xframes, (caller.imagewidth /framewidth) BOR 0);
+		calc(local.frames, xframes * ((caller.imageheight / frameheight) BOR 0));
+		def(local.frame, integer, 0);
+		
+		<!-- set the first frame -->
+		calc(caller.crop, '0|0|' + framewidth + '|' + frameheight);
+		
+		<!-- do the animation -->
+		setinterval(calc('crop_anim_' + caller.name), calc(1.0 / framerate),
+			if(caller.loaded,
+				inc(frame);
+				if(frame GE frames, if(caller.onlastframe !== null, callwith(caller, onlastframe() ) ); set(frame,0); );
+				mod(xpos, frame, xframes);
+				div(ypos, frame, xframes);
+				Math.floor(ypos);
+				mul(xpos, framewidth);
+				mul(ypos, frameheight);
+				calc(caller.crop, xpos + '|' + ypos + '|' + framewidth + '|' + frameheight);
+			  ,
+				<!-- stop the interval when the hotspot gets removed -->
+				clearinterval(calc('crop_anim_' + caller.name));
+			);
+		);
+	</action>
 
 	<scene name="scene_entrance" title="entrance" onstart="" thumburl="panos/entrance.tiles/thumb.jpg" lat="" lng="" heading="">
 
@@ -92,7 +118,7 @@
 			</level>
 		</image>
 		<hotspot name="spot1" style="skin_hotspotstyle" ath="-1.808" atv="21.522" rx='60' linkedscene="scene_frontdesk2" />
-
+		
 	</scene>
 
 
@@ -139,7 +165,28 @@
 		</image>
 		<hotspot name="spot1" style="skin_hotspotstyle" ath="138.838" atv="34.895" rx='60'  linkedscene="scene_tearoom21" />
 		<hotspot name="spot2" style="skin_hotspotstyle" ath="-144.879" atv="36.891"  rx='60'  linkedscene="scene_officearea23" />
-
+		<hotspot name="spot3" url="skin/animatedhotspot_white.png" onloaded="do_crop_animation(64,64, 60);"   ath="-13.653" atv="-6.428" onclick="looktohotspot(get(name),65);" />
+		<hotspot name="spot4" 
+			distorted="true"
+			css="font-size:76px; font-weight:bold; color:#FFFFFF;"
+			html="Mother’s Room 母婴室" 
+			bgcolor="0x000000"
+			bgalpha="0.5"
+			type="text"
+			padding="4 20"
+			scale="0.25"
+			ath="0" atv="-7"/>
+		<hotspot name="spot5"  url="skin/animatedhotspot_white.png" onloaded="do_crop_animation(64,64, 60);"   ath="56.276" atv="-0.618" onclick="looktohotspot(get(name),65);" />
+		<hotspot name="spot6" 
+			distorted="true"
+			css="font-size:76px; font-weight:bold; color:#FFFFFF;"
+			html="Minneapolis Meeting Room 明尼阿波利斯会议室" 
+			bgcolor="0x000000"
+			bgalpha="0.5"
+			type="text"
+			padding="4 20"
+			scale="0.25"
+			ath="85" atv="-0.729"/>
 	</scene>
 
 
@@ -161,7 +208,31 @@
 			</level>
 		</image>
 		<hotspot name="spot1" style="skin_hotspotstyle" ath="2.971" atv="32.025" rx='60' linkedscene="scene_officearea4" />
+		<hotspot name="spot2" url="skin/animatedhotspot_white.png" onloaded="do_crop_animation(64,64, 60);"   ath="-155" atv="-20" onclick="looktohotspot(get(name),65);" />
+		<hotspot name="spot3" 
+			distorted="true"
+			css="font-size:76px; font-weight:bold; color:#FFFFFF;"
+			html="CRM" 
+			bgcolor="0x000000"
+			bgalpha="0.5"
+			type="text"
+			style="skin_hotspotstyle"
+			padding="4 20"
+			scale="0.25"
+			ath="-147" atv="-21"/>
 
+		<hotspot name="spot4" url="skin/animatedhotspot_white.png" onloaded="do_crop_animation(64,64, 60);"   ath="-25" atv="-20" onclick="looktohotspot(get(name),65);" />
+		<hotspot name="spot5" 
+			distorted="true"
+			css="font-size:76px; font-weight:bold; color:#FFFFFF;"
+			html="SH" 
+			bgcolor="0x000000"
+			bgalpha="0.5"
+			type="text"
+			style="skin_hotspotstyle"
+			padding="4 20"
+			scale="0.25"
+			ath="-30" atv="-20"/>
 	</scene>
 
 	<scene name="scene_integration6" title="integration6" onstart="" thumburl="panos/integration6.tiles/thumb.jpg" lat="" lng="" heading="">
@@ -183,7 +254,18 @@
 		</image>
 		<hotspot name="spot1" style="skin_hotspotstyle" ath="-29.972" atv="47.891" rx='60' linkedscene="scene_office7" />
 		<hotspot name="spot2" style="skin_hotspotstyle" ath="54.407" atv="23.410" rx='60' linkedscene="scene_integration11" />
-
+		<hotspot name="spot3" url="skin/animatedhotspot_white.png" onloaded="do_crop_animation(64,64, 60);"   ath="10" atv="-20" onclick="looktohotspot(get(name),65);" />
+		<hotspot name="spot4" 
+			distorted="true"
+			css="font-size:76px; font-weight:bold; color:#FFFFFF;"
+			html="LIAN 培训室" 
+			bgcolor="0x000000"
+			bgalpha="0.5"
+			type="text"
+			style="skin_hotspotstyle"
+			padding="4 20"
+			scale="0.25"
+			ath="20" atv="-20" />
 	</scene>
 
 	<scene name="scene_integration9" title="integration9" onstart="" thumburl="panos/integration9.tiles/thumb.jpg" lat="" lng="" heading="">
@@ -205,7 +287,44 @@
 		</image>
 		<hotspot name="spot1" style="skin_hotspotstyle" ath="-106.374" atv="12.265" rx='60' linkedscene="scene_integration11" />
 		<hotspot name="spot2" style="skin_hotspotstyle" ath="-89.749" atv="27.368" rz='80' ry='60' linkedscene="scene_integration11" />
+		<hotspot name="spot3" url="skin/animatedhotspot_white.png" onloaded="do_crop_animation(64,64, 60);"   ath="-85" atv="-20" onclick="looktohotspot(get(name),65);" />
+		<hotspot name="spot4" 
+			distorted="true"
+			css="font-size:76px; font-weight:bold; color:#FFFFFF;"
+			html="China 中国" 
+			bgcolor="0x000000"
+			bgalpha="0.5"
+			type="text"
+			style="skin_hotspotstyle"
+			padding="4 20"
+			scale="0.25"
+			ath="-75" atv="-20" />
 
+		<hotspot name="spot5" url="skin/animatedhotspot_white.png" onloaded="do_crop_animation(64,64, 60);"   ath="30" atv="-20" onclick="looktohotspot(get(name),65);" />
+		<hotspot name="spot6" 
+			distorted="true"
+			css="font-size:76px; font-weight:bold; color:#FFFFFF;"
+			html="Coyol 科约尔" 
+			bgcolor="0x000000"
+			bgalpha="0.5"
+			type="text"
+			style="skin_hotspotstyle"
+			padding="4 20"
+			scale="0.25"
+			ath="45" atv="-20" />
+
+		<hotspot name="spot7" url="skin/animatedhotspot_white.png" onloaded="do_crop_animation(64,64, 60);"   ath="120" atv="-20" onclick="looktohotspot(get(name),65);" />
+		<hotspot name="spot8" 
+			distorted="true"
+			css="font-size:76px; font-weight:bold; color:#FFFFFF;"
+			html="Marlborough 马尔堡" 
+			bgcolor="0x000000"
+			bgalpha="0.5"
+			type="text"
+			style="skin_hotspotstyle"
+			padding="4 20"
+			scale="0.25"
+			ath="135" atv="-20" />
 	</scene>
 
 	<scene name="scene_integration11" title="integration11" onstart="" thumburl="panos/integration11.tiles/thumb.jpg" lat="" lng="" heading="">
@@ -273,7 +392,19 @@
 		<hotspot name="spot1" style="skin_hotspotstyle" ath="-144.292" atv="29.625"  rx='60'  linkedscene="scene_officearea17" />
 		<hotspot name="spot2" style="skin_hotspotstyle" ath="124.183" atv="25.525"  rx='60'  linkedscene="scene_officearea18" />
 		<hotspot name="spot3" style="skin_hotspotstyle" ath="6.411" atv="48.606"  rx='60'  linkedscene="scene_meetingroom1" />
-
+		<hotspot name="spot4" url="skin/animatedhotspot_white.png" onloaded="do_crop_animation(64,64, 60);"   ath="13" atv="-10" onclick="looktohotspot(get(name),65);" />
+		<hotspot name="spot5" 
+			distorted="true"
+			css="font-size:76px; font-weight:bold; color:#FFFFFF;"
+			html="Shanghai 上海" 
+			bgcolor="0x000000"
+			bgalpha="0.5"
+			type="text"
+			style="skin_hotspotstyle"
+			padding="4 20"
+			scale="0.25"
+			ath="30
+			" atv="-10" />
 	</scene>
 
 	<scene name="scene_integration19" title="integration19" onstart="" thumburl="panos/integration19.tiles/thumb.jpg" lat="" lng="" heading="">
@@ -295,7 +426,31 @@
 		</image>
 		<hotspot name="spot1" style="skin_hotspotstyle" ath="-14.112" atv="37.622" rz='-90' ry='60'  linkedscene="scene_restarea" />
 		<hotspot name="spot2" style="skin_hotspotstyle" ath="65.930" atv="22.297"   rx='60'  linkedscene="scene_tearoom21" />
+		<hotspot name="spot3" url="skin/animatedhotspot_white.png" onloaded="do_crop_animation(64,64, 60);"   ath="-20" atv="-10" onclick="looktohotspot(get(name),65);" />
+		<hotspot name="spot4" 
+			distorted="true"
+			css="font-size:76px; font-weight:bold; color:#FFFFFF;"
+			html="Wellness Room 休闲室" 
+			bgcolor="0x000000"
+			bgalpha="0.5"
+			type="text"
+			style="skin_hotspotstyle"
+			padding="4 20"
+			scale="0.25"
+			ath="-3" atv="-11" />
 
+		<hotspot name="spot5" url="skin/animatedhotspot_white.png" onloaded="do_crop_animation(64,64, 60);"   ath="-70" atv="0" onclick="looktohotspot(get(name),65);" />
+		<hotspot name="spot6" 
+			distorted="true"
+			css="font-size:76px; font-weight:bold; color:#FFFFFF;"
+			html="储物柜" 
+			bgcolor="0x000000"
+			bgalpha="0.5"
+			type="text"
+			style="skin_hotspotstyle"
+			padding="4 20"
+			scale="0.25"
+			ath="-60" atv="-1" />
 	</scene>
 
 	<scene name="scene_meetingroom0" title="meetingroom0" onstart="" thumburl="panos/meetingroom0.tiles/thumb.jpg" lat="" lng="" heading="">
@@ -548,7 +703,7 @@
 				<cube url="panos/officearea5.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
 			</level>
 		</image>
-		<hotspot name="spot1" style="skin_hotspotstyle" ath="22.885" atv="11.164" linkedscene="scene_officearea4" />
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="22.885" atv="11.164" rx="70" linkedscene="scene_officearea4" />
 		<hotspot name="spot2" style="skin_hotspotstyle" ath="21.299" atv="21.305" ry="60" rotate="-90" linkedscene="scene_integration6" />
 
 	</scene>
@@ -573,7 +728,44 @@
 		<hotspot name="spot1" style="skin_hotspotstyle" ath="60.218" atv="16.710"  rx='60'  linkedscene="scene_integration12" />
 		<hotspot name="spot2" style="skin_hotspotstyle" ath="-45.625" atv="22.857" rz='-75' ry='60'  linkedscene="scene_officearea17" />
 		<hotspot name="spot3" style="skin_hotspotstyle" ath="-102.663" atv="12.633"  rx='60'  linkedscene="scene_office15" />
+		<hotspot name="spot4" url="skin/animatedhotspot_white.png" onloaded="do_crop_animation(64,64, 60);"   ath="0" atv="0" onclick="looktohotspot(get(name),65);" />
+		<hotspot name="spot5" 
+			distorted="true"
+			css="font-size:76px; font-weight:bold; color:#FFFFFF;"
+			html="储物柜" 
+			bgcolor="0x000000"
+			bgalpha="0.5"
+			type="text"
+			style="skin_hotspotstyle"
+			padding="4 20"
+			scale="0.25"
+			ath="10" atv="0" />
 
+		<hotspot name="spot6" url="skin/animatedhotspot_white.png" onloaded="do_crop_animation(64,64, 60);"   ath="-60" atv="0" onclick="looktohotspot(get(name),65);" />
+		<hotspot name="spot7" 
+			distorted="true"
+			css="font-size:76px; font-weight:bold; color:#FFFFFF;"
+			html="衣物柜" 
+			bgcolor="0x000000"
+			bgalpha="0.5"
+			type="text"
+			style="skin_hotspotstyle"
+			padding="4 20"
+			scale="0.25"
+			ath="-50" atv="0" />
+
+		<hotspot name="spot8" url="skin/animatedhotspot_white.png" onloaded="do_crop_animation(64,64, 60);"   ath="-110" atv="0" onclick="looktohotspot(get(name),65);" />
+		<hotspot name="spot9" 
+			distorted="true"
+			css="font-size:76px; font-weight:bold; color:#FFFFFF;"
+			html="Gurugram 古尔冈" 
+			bgcolor="0x000000"
+			bgalpha="0.5"
+			type="text"
+			style="skin_hotspotstyle"
+			padding="4 20"
+			scale="0.25"
+			ath="-95" atv="0" />
 	</scene>
 
 	<scene name="scene_officearea17" title="officearea17" onstart="" thumburl="panos/officearea17.tiles/thumb.jpg" lat="" lng="" heading="">
@@ -593,9 +785,33 @@
 				<cube url="panos/officearea17.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
 			</level>
 		</image>
-		<hotspot name="spot1" style="skin_hotspotstyle" ath="14.467" atv="26.878" linkedscene="scene_integration16" />
-		<hotspot name="spot2" style="skin_hotspotstyle" ath="49.254" atv="27.325" linkedscene="scene_officearea14" />
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="14.054" atv="23.925" rz='-80' ry='60' linkedscene="scene_integration16" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="48.698" atv="23.855" rz='80' ry='60' linkedscene="scene_officearea14" />
 
+		<hotspot name="spot3" url="skin/animatedhotspot_white.png" onloaded="do_crop_animation(64,64, 60);"   ath="60" atv="0" onclick="looktohotspot(get(name),65);" />
+		<hotspot name="spot4" 
+			distorted="true"
+			css="font-size:76px; font-weight:bold; color:#FFFFFF;"
+			html="储物柜" 
+			bgcolor="0x000000"
+			bgalpha="0.5"
+			type="text"
+			style="skin_hotspotstyle"
+			padding="4 20"
+			scale="0.25"
+			ath="70" atv="0" />
+		<hotspot name="spot5" url="skin/animatedhotspot_white.png" onloaded="do_crop_animation(64,64, 60);"   ath="-10" atv="0" onclick="looktohotspot(get(name),65);" />
+		<hotspot name="spot6" 
+			distorted="true"
+			css="font-size:76px; font-weight:bold; color:#FFFFFF;"
+			html="强电间" 
+			bgcolor="0x000000"
+			bgalpha="0.5"
+			type="text"
+			style="skin_hotspotstyle"
+			padding="4 20"
+			scale="0.25"
+			ath="0" atv="0" />
 	</scene>
 
 	<scene name="scene_officearea18" title="officearea18" onstart="" thumburl="panos/officearea18.tiles/thumb.jpg" lat="" lng="" heading="">
@@ -620,7 +836,40 @@
 		<hotspot name="spot3" style="skin_hotspotstyle" ath="70.234" atv="7.902" rx='60'  linkedscene="scene_meetingroom5" />
 		<hotspot name="spot4" style="skin_hotspotstyle" ath="23.670" atv="21.815"  ry='60' rz='-80'  linkedscene="scene_integration19" />
 		<hotspot name="spot5" style="skin_hotspotstyle" ath="55.083" atv="21.119" ry='60' rz='80'  linkedscene="scene_integration16" />
+		<hotspot name="spot6" url="skin/animatedhotspot_white.png" onloaded="do_crop_animation(64,64, 60);"   ath="-10" atv="-5" onclick="looktohotspot(get(name),65);" />
+		<hotspot name="spot7" 
+			distorted="true"
+			css="font-size:76px; font-weight:bold; color:#FFFFFF;"
+			html="Japan 日本" 
+			bgcolor="0x000000"
+			bgalpha="0.5"
+			type="text"
+			padding="4 20"
+			scale="0.25"
+			ath="0" atv="-6" />
+		<hotspot name="spot8" url="skin/animatedhotspot_white.png" onloaded="do_crop_animation(64,64, 60);"   ath="19" atv="-6" onclick="looktohotspot(get(name),65);" />
+		<hotspot name="spot9" 
+			distorted="true"
+			css="font-size:76px; font-weight:bold; color:#FFFFFF;"
+			html="Warsaw 华沙" 
+			bgcolor="0x000000"
+			bgalpha="0.5"
+			type="text"
+			padding="4 20"
+			scale="0.25"
+			ath="29" atv="-6" />
 
+		<hotspot name="spot10" url="skin/animatedhotspot_white.png" onloaded="do_crop_animation(64,64, 60);"   ath="77" atv="-6" onclick="looktohotspot(get(name),65);" />
+		<hotspot name="spot11" 
+			distorted="true"
+			css="font-size:76px; font-weight:bold; color:#FFFFFF;"
+			html="Korea 韩国" 
+			bgcolor="0x000000"
+			bgalpha="0.5"
+			type="text"
+			padding="4 20"
+			scale="0.25"
+			ath="87" atv="-6" />
 	</scene>
 
 	<scene name="scene_officearea23" title="officearea23" onstart="" thumburl="panos/officearea23.tiles/thumb.jpg" lat="" lng="" heading="">
@@ -727,7 +976,29 @@
 		</image>
 		<hotspot name="spot1" style="skin_hotspotstyle" ath="107.436" atv="16.395" rx='60'  linkedscene="scene_ebar22" />
 		<hotspot name="spot2" style="skin_hotspotstyle" ath="-117.266" atv="27.430" rx='60'  linkedscene="scene_integration19" />
+		<hotspot name="spot3" url="skin/animatedhotspot_white.png" onloaded="do_crop_animation(64,64, 60);"   ath="-162" atv="-10" onclick="looktohotspot(get(name),65);" />
+		<hotspot name="spot4" 
+			distorted="true"
+			css="font-size:76px; font-weight:bold; color:#FFFFFF;"
+			html="EP" 
+			bgcolor="0x000000"
+			bgalpha="0.5"
+			type="text"
+			padding="4 20"
+			scale="0.25"
+			ath="-154.800" atv="-10" />
 
+		<hotspot name="spot5" url="skin/animatedhotspot_white.png" onloaded="do_crop_animation(64,64, 60);"   ath="-121.644" atv="-8.747" onclick="looktohotspot(get(name),65);" />
+		<hotspot name="spot6" 
+			distorted="true"
+			css="font-size:76px; font-weight:bold; color:#FFFFFF;"
+			html="IC" 
+			bgcolor="0x000000"
+			bgalpha="0.5"
+			type="text"
+			padding="4 20"
+			scale="0.25"
+			ath="-116.705" atv="-9.044" />
 	</scene>
 
 
