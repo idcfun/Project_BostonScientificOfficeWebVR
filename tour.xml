@@ -102,7 +102,7 @@
 
 	<scene name="scene_entrance" title="entrance" onstart="" thumburl="panos/entrance.tiles/thumb.jpg" lat="" lng="" heading="">
 
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" fisheye="true" />
+		<view hlookat="0.530" vlookat="4.157" fovtype="MFOV" fov="109.672" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" fisheye="true" />
 
 		<preview url="panos/entrance.tiles/preview.jpg" />
 
@@ -120,9 +120,6 @@
 		<hotspot name="spot1" style="skin_hotspotstyle" ath="-1.808" atv="21.522" rx='60' linkedscene="scene_frontdesk2" />
 		
 	</scene>
-
-
-
 	<scene name="scene_frontdesk2" title="frontdesk2" onstart="" thumburl="panos/frontdesk2.tiles/thumb.jpg" lat="" lng="" heading="">
 
 		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
@@ -143,53 +140,9 @@
 		<hotspot name="spot1" style="skin_hotspotstyle" ath="-47.199" atv="17.462" ry="60" rotate="-75" linkedscene="scene_officearea23" />
 		<hotspot name="spot2" style="skin_hotspotstyle" ath="41.241" atv="19.076" ry="60" rotate="75" linkedscene="scene_integration3" />
 		<hotspot name="spot3" style="skin_hotspotstyle" ath="129.436" atv="23.916" rx="60" linkedscene="scene_meetingroom3" />
+		<hotspot name="spot4" style="skin_hotspotstyle" ath="-143.145" atv="20.952"  rx='60' rlinkedscene="scene_entrance" />
 
 	</scene>
-	
-	<scene name="scene_ebar22" title="ebar22" onstart="" thumburl="panos/ebar22.tiles/thumb.jpg" lat="" lng="" heading="">
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
-
-		<preview url="panos/ebar22.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512">
-			<level tiledimagewidth="2560" tiledimageheight="2560">
-				<cube url="panos/ebar22.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="1280" tiledimageheight="1280">
-				<cube url="panos/ebar22.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="640" tiledimageheight="640">
-				<cube url="panos/ebar22.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-		<hotspot name="spot1" style="skin_hotspotstyle" ath="138.838" atv="34.895" rx='60'  linkedscene="scene_tearoom21" />
-		<hotspot name="spot2" style="skin_hotspotstyle" ath="-144.879" atv="36.891"  rx='60'  linkedscene="scene_officearea23" />
-		<hotspot name="spot3" url="skin/animatedhotspot_white.png" onloaded="do_crop_animation(64,64, 60);"   ath="-13.653" atv="-6.428" onclick="looktohotspot(get(name),65);" />
-		<hotspot name="spot4" 
-			distorted="true"
-			css="font-size:76px; font-weight:bold; color:#FFFFFF;"
-			html="Mother’s Room 母婴室" 
-			bgcolor="0x000000"
-			bgalpha="0.5"
-			type="text"
-			padding="4 20"
-			scale="0.25"
-			ath="0" atv="-7"/>
-		<hotspot name="spot5"  url="skin/animatedhotspot_white.png" onloaded="do_crop_animation(64,64, 60);"   ath="56.276" atv="-0.618" onclick="looktohotspot(get(name),65);" />
-		<hotspot name="spot6" 
-			distorted="true"
-			css="font-size:76px; font-weight:bold; color:#FFFFFF;"
-			html="Minneapolis Meeting Room 明尼阿波利斯会议室" 
-			bgcolor="0x000000"
-			bgalpha="0.5"
-			type="text"
-			padding="4 20"
-			scale="0.25"
-			ath="85" atv="-0.729"/>
-	</scene>
-
-
 	<scene name="scene_integration3" title="integration3" onstart="" thumburl="panos/integration3.tiles/thumb.jpg" lat="" lng="" heading="">
 
 		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
@@ -208,7 +161,7 @@
 			</level>
 		</image>
 		<hotspot name="spot1" style="skin_hotspotstyle" ath="2.971" atv="32.025" rx='60' linkedscene="scene_officearea4" />
-		<hotspot name="spot2" url="skin/animatedhotspot_white.png" onloaded="do_crop_animation(64,64, 60);"   ath="-155" atv="-20" onclick="looktohotspot(get(name),65);" />
+		<hotspot name="spot2" url="skin/animatedhotspot_white.png" onloaded="do_crop_animation(64,64, 60);"   ath="-155.000" atv="-20.000" onclick="looktohotspot(get(name),65);" />
 		<hotspot name="spot3" 
 			distorted="true"
 			css="font-size:76px; font-weight:bold; color:#FFFFFF;"
@@ -219,9 +172,9 @@
 			style="skin_hotspotstyle"
 			padding="4 20"
 			scale="0.25"
-			ath="-147" atv="-21"/>
+			ath="-147.000" atv="-21.000"/>
 
-		<hotspot name="spot4" url="skin/animatedhotspot_white.png" onloaded="do_crop_animation(64,64, 60);"   ath="-25" atv="-20" onclick="looktohotspot(get(name),65);" />
+		<hotspot name="spot4" url="skin/animatedhotspot_white.png" onloaded="do_crop_animation(64,64, 60);"   ath="-25.000" atv="-20.000" onclick="looktohotspot(get(name),65);" />
 		<hotspot name="spot5" 
 			distorted="true"
 			css="font-size:76px; font-weight:bold; color:#FFFFFF;"
@@ -232,9 +185,99 @@
 			style="skin_hotspotstyle"
 			padding="4 20"
 			scale="0.25"
-			ath="-30" atv="-20"/>
+			ath="-30.000" atv="-20.000"/>
+		<hotspot name="spot6" style="skin_hotspotstyle" ath="174.704" atv="31.103" rx='60' rz='-20' linkedscene="scene_frontdesk2" />
+		<hotspot name="spot7" style="skin_hotspotstyle" ath="-53.565" atv="57.193" rx='30' linkedscene="scene_meetingroom0" />
 	</scene>
+	<scene name="scene_officearea4" title="officearea4" onstart="" thumburl="panos/officearea4.tiles/thumb.jpg" lat="" lng="" heading="">
 
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/officearea4.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="2560" tiledimageheight="2560">
+				<cube url="panos/officearea4.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1280" tiledimageheight="1280">
+				<cube url="panos/officearea4.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="640" tiledimageheight="640">
+				<cube url="panos/officearea4.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="50.124" atv="21.525" rx='60' linkedscene="scene_officearea5" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="134.089" atv="13.118" rx='60' linkedscene="scene_integration6" />
+		<hotspot name="spot3" style="skin_hotspotstyle" ath="-178.537" atv="13.806" rx='60' linkedscene="scene_integration3" />
+
+	</scene>
+	<scene name="scene_officearea5" title="officearea5" onstart="" thumburl="panos/officearea5.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/officearea5.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="2560" tiledimageheight="2560">
+				<cube url="panos/officearea5.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1280" tiledimageheight="1280">
+				<cube url="panos/officearea5.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="640" tiledimageheight="640">
+				<cube url="panos/officearea5.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="22.885" atv="11.164" rx="70" linkedscene="scene_officearea4" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="21.299" atv="21.305" ry="60" rotate="-90" linkedscene="scene_integration6" />
+		<hotspot name="spot3" style="skin_hotspotstyle" url="skin/animatedhotspot_white.png" onloaded="do_crop_animation(64,64, 60);"   ath="-100.706" atv="-3.040" onclick="looktohotspot(get(name),65);" />
+		<hotspot name="spot4" 
+			distorted="true"
+			css="font-size:76px; font-weight:bold; color:#FFFFFF;"
+			html="URO" 
+			bgcolor="0x000000"
+			bgalpha="0.5"
+			type="text"
+			padding="4 20"
+			scale="0.25"
+			ath="-96.000" atv="-1.500" />
+
+		<hotspot name="spot5" style="skin_hotspotstyle" url="skin/animatedhotspot_white.png" onloaded="do_crop_animation(64,64, 60);"   ath="-82.783" atv="-3.522" onclick="looktohotspot(get(name),65);" />
+		<hotspot name="spot6" 
+			distorted="true"
+			css="font-size:76px; font-weight:bold; color:#FFFFFF;"
+			html="PUL" 
+			bgcolor="0x000000"
+			bgalpha="0.5"
+			type="text"
+			padding="4 20"
+			scale="0.25"
+			ath="-78.000" atv="-1.500" />
+
+		<hotspot name="spot7" style="skin_hotspotstyle" url="skin/animatedhotspot_white.png" onloaded="do_crop_animation(64,64, 60);"   ath="-64.194" atv="-3.664" onclick="looktohotspot(get(name),65);" />
+		<hotspot name="spot8" 
+			distorted="true"
+			css="font-size:76px; font-weight:bold; color:#FFFFFF;"
+			html="Endo" 
+			bgcolor="0x000000"
+			bgalpha="0.5"
+			type="text"
+			padding="4 20"
+			scale="0.25"
+			ath="-58.485" atv="-1.300" />
+
+		<hotspot name="spot9" style="skin_hotspotstyle" url="skin/animatedhotspot_white.png" onloaded="do_crop_animation(64,64, 60);"   ath="-45.801" atv="-3.043" onclick="looktohotspot(get(name),65);" />
+		<hotspot name="spot10" 
+			distorted="true"
+			css="font-size:76px; font-weight:bold; color:#FFFFFF;"
+			html="PI" 
+			bgcolor="0x000000"
+			bgalpha="0.5"
+			type="text"
+			padding="4 20"
+			scale="0.25"
+			ath="-42.000" atv="-1.500" />
+	</scene>
 	<scene name="scene_integration6" title="integration6" onstart="" thumburl="panos/integration6.tiles/thumb.jpg" lat="" lng="" heading="">
 
 		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
@@ -254,7 +297,7 @@
 		</image>
 		<hotspot name="spot1" style="skin_hotspotstyle" ath="-29.972" atv="47.891" rx='60' linkedscene="scene_office7" />
 		<hotspot name="spot2" style="skin_hotspotstyle" ath="54.407" atv="23.410" rx='60' linkedscene="scene_integration11" />
-		<hotspot name="spot3" url="skin/animatedhotspot_white.png" onloaded="do_crop_animation(64,64, 60);"   ath="10" atv="-20" onclick="looktohotspot(get(name),65);" />
+		<hotspot name="spot3" url="skin/animatedhotspot_white.png" onloaded="do_crop_animation(64,64, 60);"   ath="10.000" atv="-20.000" onclick="looktohotspot(get(name),65);" />
 		<hotspot name="spot4" 
 			distorted="true"
 			css="font-size:76px; font-weight:bold; color:#FFFFFF;"
@@ -265,319 +308,9 @@
 			style="skin_hotspotstyle"
 			padding="4 20"
 			scale="0.25"
-			ath="20" atv="-20" />
+			ath="20.000" atv="-20.000" />
+		<hotspot name="spot5" style="skin_hotspotstyle" ath="-127.787" atv="23.901" rx='60' linkedscene="scene_officearea4" />
 	</scene>
-
-	<scene name="scene_integration9" title="integration9" onstart="" thumburl="panos/integration9.tiles/thumb.jpg" lat="" lng="" heading="">
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
-
-		<preview url="panos/integration9.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512">
-			<level tiledimagewidth="2560" tiledimageheight="2560">
-				<cube url="panos/integration9.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="1280" tiledimageheight="1280">
-				<cube url="panos/integration9.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="640" tiledimageheight="640">
-				<cube url="panos/integration9.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-		<hotspot name="spot1" style="skin_hotspotstyle" ath="-106.374" atv="12.265" rx='60' linkedscene="scene_integration11" />
-		<hotspot name="spot2" style="skin_hotspotstyle" ath="-89.749" atv="27.368" rz='80' ry='60' linkedscene="scene_integration11" />
-		<hotspot name="spot3" url="skin/animatedhotspot_white.png" onloaded="do_crop_animation(64,64, 60);"   ath="-85" atv="-20" onclick="looktohotspot(get(name),65);" />
-		<hotspot name="spot4" 
-			distorted="true"
-			css="font-size:76px; font-weight:bold; color:#FFFFFF;"
-			html="China 中国" 
-			bgcolor="0x000000"
-			bgalpha="0.5"
-			type="text"
-			style="skin_hotspotstyle"
-			padding="4 20"
-			scale="0.25"
-			ath="-75" atv="-20" />
-
-		<hotspot name="spot5" url="skin/animatedhotspot_white.png" onloaded="do_crop_animation(64,64, 60);"   ath="30" atv="-20" onclick="looktohotspot(get(name),65);" />
-		<hotspot name="spot6" 
-			distorted="true"
-			css="font-size:76px; font-weight:bold; color:#FFFFFF;"
-			html="Coyol 科约尔" 
-			bgcolor="0x000000"
-			bgalpha="0.5"
-			type="text"
-			style="skin_hotspotstyle"
-			padding="4 20"
-			scale="0.25"
-			ath="45" atv="-20" />
-
-		<hotspot name="spot7" url="skin/animatedhotspot_white.png" onloaded="do_crop_animation(64,64, 60);"   ath="120" atv="-20" onclick="looktohotspot(get(name),65);" />
-		<hotspot name="spot8" 
-			distorted="true"
-			css="font-size:76px; font-weight:bold; color:#FFFFFF;"
-			html="Marlborough 马尔堡" 
-			bgcolor="0x000000"
-			bgalpha="0.5"
-			type="text"
-			style="skin_hotspotstyle"
-			padding="4 20"
-			scale="0.25"
-			ath="135" atv="-20" />
-	</scene>
-
-	<scene name="scene_integration11" title="integration11" onstart="" thumburl="panos/integration11.tiles/thumb.jpg" lat="" lng="" heading="">
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
-
-		<preview url="panos/integration11.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512">
-			<level tiledimagewidth="2560" tiledimageheight="2560">
-				<cube url="panos/integration11.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="1280" tiledimageheight="1280">
-				<cube url="panos/integration11.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="640" tiledimageheight="640">
-				<cube url="panos/integration11.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-		<hotspot name="spot1" style="skin_hotspotstyle" ath="-33.636" atv="32.152" rx='60' linkedscene="scene_integration12" />
-		<hotspot name="spot2" style="skin_hotspotstyle" ath="-73.298" atv="43.120"  rx='45' rz='-45' linkedscene="scene_printingarea13" />
-
-	</scene>
-
-	<scene name="scene_integration12" title="integration12" onstart="" thumburl="panos/integration12.tiles/thumb.jpg" lat="" lng="" heading="">
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
-
-		<preview url="panos/integration12.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512">
-			<level tiledimagewidth="2560" tiledimageheight="2560">
-				<cube url="panos/integration12.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="1280" tiledimageheight="1280">
-				<cube url="panos/integration12.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="640" tiledimageheight="640">
-				<cube url="panos/integration12.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-		<hotspot name="spot1" style="skin_hotspotstyle" ath="7.418" atv="12.785"  rx='60'  linkedscene="scene_integration11" />
-		<hotspot name="spot2" style="skin_hotspotstyle" ath="-5.293" atv="23.551"  ry='60' rz='-80' linkedscene="scene_officearea14" />
-		<hotspot name="spot3" style="skin_hotspotstyle" ath="25.960" atv="21.213"  ry='60' rz='80' linkedscene="scene_officearea14" />
-
-	</scene>
-
-	<scene name="scene_integration16" title="integration16" onstart="" thumburl="panos/integration16.tiles/thumb.jpg" lat="" lng="" heading="">
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
-
-		<preview url="panos/integration16.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512">
-			<level tiledimagewidth="2560" tiledimageheight="2560">
-				<cube url="panos/integration16.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="1280" tiledimageheight="1280">
-				<cube url="panos/integration16.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="640" tiledimageheight="640">
-				<cube url="panos/integration16.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-		<hotspot name="spot1" style="skin_hotspotstyle" ath="-144.292" atv="29.625"  rx='60'  linkedscene="scene_officearea17" />
-		<hotspot name="spot2" style="skin_hotspotstyle" ath="124.183" atv="25.525"  rx='60'  linkedscene="scene_officearea18" />
-		<hotspot name="spot3" style="skin_hotspotstyle" ath="6.411" atv="48.606"  rx='60'  linkedscene="scene_meetingroom1" />
-		<hotspot name="spot4" url="skin/animatedhotspot_white.png" onloaded="do_crop_animation(64,64, 60);"   ath="13" atv="-10" onclick="looktohotspot(get(name),65);" />
-		<hotspot name="spot5" 
-			distorted="true"
-			css="font-size:76px; font-weight:bold; color:#FFFFFF;"
-			html="Shanghai 上海" 
-			bgcolor="0x000000"
-			bgalpha="0.5"
-			type="text"
-			style="skin_hotspotstyle"
-			padding="4 20"
-			scale="0.25"
-			ath="30
-			" atv="-10" />
-	</scene>
-
-	<scene name="scene_integration19" title="integration19" onstart="" thumburl="panos/integration19.tiles/thumb.jpg" lat="" lng="" heading="">
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
-
-		<preview url="panos/integration19.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512">
-			<level tiledimagewidth="2560" tiledimageheight="2560">
-				<cube url="panos/integration19.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="1280" tiledimageheight="1280">
-				<cube url="panos/integration19.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="640" tiledimageheight="640">
-				<cube url="panos/integration19.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-		<hotspot name="spot1" style="skin_hotspotstyle" ath="-14.112" atv="37.622" rz='-90' ry='60'  linkedscene="scene_restarea" />
-		<hotspot name="spot2" style="skin_hotspotstyle" ath="65.930" atv="22.297"   rx='60'  linkedscene="scene_tearoom21" />
-		<hotspot name="spot3" url="skin/animatedhotspot_white.png" onloaded="do_crop_animation(64,64, 60);"   ath="-20" atv="-10" onclick="looktohotspot(get(name),65);" />
-		<hotspot name="spot4" 
-			distorted="true"
-			css="font-size:76px; font-weight:bold; color:#FFFFFF;"
-			html="Wellness Room 休闲室" 
-			bgcolor="0x000000"
-			bgalpha="0.5"
-			type="text"
-			style="skin_hotspotstyle"
-			padding="4 20"
-			scale="0.25"
-			ath="-3" atv="-11" />
-
-		<hotspot name="spot5" url="skin/animatedhotspot_white.png" onloaded="do_crop_animation(64,64, 60);"   ath="-70" atv="0" onclick="looktohotspot(get(name),65);" />
-		<hotspot name="spot6" 
-			distorted="true"
-			css="font-size:76px; font-weight:bold; color:#FFFFFF;"
-			html="储物柜" 
-			bgcolor="0x000000"
-			bgalpha="0.5"
-			type="text"
-			style="skin_hotspotstyle"
-			padding="4 20"
-			scale="0.25"
-			ath="-60" atv="-1" />
-	</scene>
-
-	<scene name="scene_meetingroom0" title="meetingroom0" onstart="" thumburl="panos/meetingroom0.tiles/thumb.jpg" lat="" lng="" heading="">
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
-
-		<preview url="panos/meetingroom0.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512">
-			<level tiledimagewidth="2560" tiledimageheight="2560">
-				<cube url="panos/meetingroom0.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="1280" tiledimageheight="1280">
-				<cube url="panos/meetingroom0.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="640" tiledimageheight="640">
-				<cube url="panos/meetingroom0.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-
-	</scene>
-
-	<scene name="scene_meetingroom1" title="meetingroom1" onstart="" thumburl="panos/meetingroom1.tiles/thumb.jpg" lat="" lng="" heading="">
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
-
-		<preview url="panos/meetingroom1.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512">
-			<level tiledimagewidth="2560" tiledimageheight="2560">
-				<cube url="panos/meetingroom1.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="1280" tiledimageheight="1280">
-				<cube url="panos/meetingroom1.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="640" tiledimageheight="640">
-				<cube url="panos/meetingroom1.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-		<hotspot name="spot1" style="skin_hotspotstyle" ath="-80.139" atv="26.756" rx='60'  linkedscene="scene_officearea18" />
-
-	</scene>
-
-	<scene name="scene_meetingroom2" title="meetingroom2" onstart="" thumburl="panos/meetingroom2.tiles/thumb.jpg" lat="" lng="" heading="">
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
-
-		<preview url="panos/meetingroom2.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512">
-			<level tiledimagewidth="2560" tiledimageheight="2560">
-				<cube url="panos/meetingroom2.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="1280" tiledimageheight="1280">
-				<cube url="panos/meetingroom2.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="640" tiledimageheight="640">
-				<cube url="panos/meetingroom2.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-		<hotspot name="spot1" style="skin_hotspotstyle" ath="114.942" atv="28.510" rx='60'  linkedscene="scene_officearea18" />
-
-	</scene>
-
-	<scene name="scene_meetingroom3" title="meetingroom3" onstart="" thumburl="panos/meetingroom3.tiles/thumb.jpg" lat="" lng="" heading="">
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
-
-		<preview url="panos/meetingroom3.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512">
-			<level tiledimagewidth="2560" tiledimageheight="2560">
-				<cube url="panos/meetingroom3.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="1280" tiledimageheight="1280">
-				<cube url="panos/meetingroom3.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="640" tiledimageheight="640">
-				<cube url="panos/meetingroom3.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-		<hotspot name="spot1" style="skin_hotspotstyle" ath="10.783" atv="27.105" rx="60" linkedscene="scene_frontdesk2" />
-
-	</scene>
-
-	<scene name="scene_meetingroom4" title="meetingroom4" onstart="" thumburl="panos/meetingroom4.tiles/thumb.jpg" lat="" lng="" heading="">
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
-
-		<preview url="panos/meetingroom4.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512">
-			<level tiledimagewidth="2560" tiledimageheight="2560">
-				<cube url="panos/meetingroom4.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="1280" tiledimageheight="1280">
-				<cube url="panos/meetingroom4.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="640" tiledimageheight="640">
-				<cube url="panos/meetingroom4.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-		<hotspot name="spot1" style="skin_hotspotstyle" ath="-174.526" atv="52.256" linkedscene="scene_officearea18" />
-
-	</scene>
-
-	<scene name="scene_meetingroom5" title="meetingroom5" onstart="" thumburl="panos/meetingroom5.tiles/thumb.jpg" lat="" lng="" heading="">
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
-
-		<preview url="panos/meetingroom5.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512">
-			<level tiledimagewidth="2560" tiledimageheight="2560">
-				<cube url="panos/meetingroom5.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="1280" tiledimageheight="1280">
-				<cube url="panos/meetingroom5.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="640" tiledimageheight="640">
-				<cube url="panos/meetingroom5.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-		<hotspot name="spot1" style="skin_hotspotstyle" ath="-179.054" atv="52.829" linkedscene="scene_officearea18" />
-
-	</scene>
-
 	<scene name="scene_office7" title="office7" onstart="" thumburl="panos/office7.tiles/thumb.jpg" lat="" lng="" heading="">
 
 		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
@@ -595,8 +328,8 @@
 				<cube url="panos/office7.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
 			</level>
 		</image>
-		<hotspot name="spot1" style="skin_hotspotstyle" ath="-36.122" atv="9.471" linkedscene="scene_integration6" />
-		<hotspot name="spot2" style="skin_hotspotstyle" ath="-86.175" atv="12.151" linkedscene="scene_office8" />
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-36.122" atv="9.471" rx='60' linkedscene="scene_integration6" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="-86.175" atv="12.151" rx='60' linkedscene="scene_office8" />
 
 	</scene>
 
@@ -620,7 +353,65 @@
 		<hotspot name="spot1" style="skin_hotspotstyle" ath="56.079" atv="8.573" rx='60' linkedscene="scene_integration9" />
 
 	</scene>
+	<scene name="scene_integration9" title="integration9" onstart="" thumburl="panos/integration9.tiles/thumb.jpg" lat="" lng="" heading="">
 
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/integration9.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="2560" tiledimageheight="2560">
+				<cube url="panos/integration9.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1280" tiledimageheight="1280">
+				<cube url="panos/integration9.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="640" tiledimageheight="640">
+				<cube url="panos/integration9.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-106.374" atv="12.265" rx='60' linkedscene="scene_integration11" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="-89.749" atv="27.368" rz='80' ry='60' linkedscene="scene_integration11" />
+		<hotspot name="spot3" url="skin/animatedhotspot_white.png" onloaded="do_crop_animation(64,64, 60);"   ath="-85.000" atv="-20.000" onclick="looktohotspot(get(name),65);" />
+		<hotspot name="spot4" 
+			distorted="true"
+			css="font-size:76px; font-weight:bold; color:#FFFFFF;"
+			html="China 中国" 
+			bgcolor="0x000000"
+			bgalpha="0.5"
+			type="text"
+			style="skin_hotspotstyle"
+			padding="4 20"
+			scale="0.25"
+			ath="-75.000" atv="-20.000" />
+
+		<hotspot name="spot5" url="skin/animatedhotspot_white.png" onloaded="do_crop_animation(64,64, 60);"   ath="30.000" atv="-20.000" onclick="looktohotspot(get(name),65);" />
+		<hotspot name="spot6" 
+			distorted="true"
+			css="font-size:76px; font-weight:bold; color:#FFFFFF;"
+			html="Coyol 科约尔" 
+			bgcolor="0x000000"
+			bgalpha="0.5"
+			type="text"
+			style="skin_hotspotstyle"
+			padding="4 20"
+			scale="0.25"
+			ath="45.000" atv="-20.000" />
+
+		<hotspot name="spot7" url="skin/animatedhotspot_white.png" onloaded="do_crop_animation(64,64, 60);"   ath="120.000" atv="-20.000" onclick="looktohotspot(get(name),65);" />
+		<hotspot name="spot8" 
+			distorted="true"
+			css="font-size:76px; font-weight:bold; color:#FFFFFF;"
+			html="Marlborough 马尔堡" 
+			bgcolor="0x000000"
+			bgalpha="0.5"
+			type="text"
+			style="skin_hotspotstyle"
+			padding="4 20"
+			scale="0.25"
+			ath="135.000" atv="-20.000" />
+		<hotspot name="spot9" style="skin_hotspotstyle" ath="72.721" atv="31.310" rx='60' linkedscene="scene_integration6" />
+	</scene>
 	<scene name="scene_office10" title="office10" onstart="" thumburl="panos/office10.tiles/thumb.jpg" lat="" lng="" heading="">
 
 		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
@@ -642,72 +433,90 @@
 		<hotspot name="spot2" style="skin_hotspotstyle" ath="-150.346" atv="38.795" rx='60'  linkedscene="scene_integration11" />
 
 	</scene>
-
-	<scene name="scene_office15" title="office15" onstart="" thumburl="panos/office15.tiles/thumb.jpg" lat="" lng="" heading="">
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
-
-		<preview url="panos/office15.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512">
-			<level tiledimagewidth="2560" tiledimageheight="2560">
-				<cube url="panos/office15.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="1280" tiledimageheight="1280">
-				<cube url="panos/office15.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="640" tiledimageheight="640">
-				<cube url="panos/office15.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-		<hotspot name="spot1" style="skin_hotspotstyle" ath="-64.784" atv="35.565" rx='60' linkedscene="scene_officearea14" />
-
-	</scene>
-
-	<scene name="scene_officearea4" title="officearea4" onstart="" thumburl="panos/officearea4.tiles/thumb.jpg" lat="" lng="" heading="">
+	<scene name="scene_integration11" title="integration11" onstart="" thumburl="panos/integration11.tiles/thumb.jpg" lat="" lng="" heading="">
 
 		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
 
-		<preview url="panos/officearea4.tiles/preview.jpg" />
+		<preview url="panos/integration11.tiles/preview.jpg" />
 
 		<image type="CUBE" multires="true" tilesize="512">
 			<level tiledimagewidth="2560" tiledimageheight="2560">
-				<cube url="panos/officearea4.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+				<cube url="panos/integration11.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
 			</level>
 			<level tiledimagewidth="1280" tiledimageheight="1280">
-				<cube url="panos/officearea4.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+				<cube url="panos/integration11.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
 			</level>
 			<level tiledimagewidth="640" tiledimageheight="640">
-				<cube url="panos/officearea4.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+				<cube url="panos/integration11.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
 			</level>
 		</image>
-		<hotspot name="spot1" style="skin_hotspotstyle" ath="50.124" atv="21.525" rx='60' linkedscene="scene_officearea5" />
-		<hotspot name="spot2" style="skin_hotspotstyle" ath="134.089" atv="13.118" rx='60' linkedscene="scene_integration6" />
-
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-33.636" atv="32.152" rx='60' linkedscene="scene_integration12" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="118.000" atv="-15.000"  rx='45' rz='-45' linkedscene="scene_printingarea13" />
+		<hotspot name="spot2" url="skin/animatedhotspot_white.png" onloaded="do_crop_animation(64,64, 60);"   ath="118" atv="-15" onclick="looktohotspot(get(name),65);" />
+		<hotspot name="spot3" 
+			distorted="true"
+			css="font-size:76px; font-weight:bold; color:#FFFFFF;"
+			html="Heredia Meeting Room 埃雷迪亚会" 
+			bgcolor="0x000000"
+			bgalpha="0.5"
+			type="text"
+			padding="4 20"
+			scale="0.25"
+			 ath="140.000" atv="-15.000"  />
+		<hotspot name="spot4" style="skin_hotspotstyle" ath="-84.677" atv="36.719" rx='60' linkedscene="scene_printingarea13" />
 	</scene>
-
-	<scene name="scene_officearea5" title="officearea5" onstart="" thumburl="panos/officearea5.tiles/thumb.jpg" lat="" lng="" heading="">
+	<scene name="scene_integration12" title="integration12" onstart="" thumburl="panos/integration12.tiles/thumb.jpg" lat="" lng="" heading="">
 
 		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
 
-		<preview url="panos/officearea5.tiles/preview.jpg" />
+		<preview url="panos/integration12.tiles/preview.jpg" />
 
 		<image type="CUBE" multires="true" tilesize="512">
 			<level tiledimagewidth="2560" tiledimageheight="2560">
-				<cube url="panos/officearea5.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+				<cube url="panos/integration12.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
 			</level>
 			<level tiledimagewidth="1280" tiledimageheight="1280">
-				<cube url="panos/officearea5.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+				<cube url="panos/integration12.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
 			</level>
 			<level tiledimagewidth="640" tiledimageheight="640">
-				<cube url="panos/officearea5.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+				<cube url="panos/integration12.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
 			</level>
 		</image>
-		<hotspot name="spot1" style="skin_hotspotstyle" ath="22.885" atv="11.164" rx="70" linkedscene="scene_officearea4" />
-		<hotspot name="spot2" style="skin_hotspotstyle" ath="21.299" atv="21.305" ry="60" rotate="-90" linkedscene="scene_integration6" />
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="7.418" atv="12.785"  rx='60'  linkedscene="scene_integration11" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="-5.293" atv="23.551"  ry='60' rz='-80' linkedscene="scene_officearea14" />
+		<hotspot name="spot3" style="skin_hotspotstyle" ath="25.960" atv="21.213"  ry='60' rz='80' linkedscene="scene_officearea14" />
 
 	</scene>
+	<scene name="scene_printingarea13" title="printingarea13" onstart="" thumburl="panos/printingarea13.tiles/thumb.jpg" lat="" lng="" heading="">
 
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/printingarea13.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="2560" tiledimageheight="2560">
+				<cube url="panos/printingarea13.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1280" tiledimageheight="1280">
+				<cube url="panos/printingarea13.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="640" tiledimageheight="640">
+				<cube url="panos/printingarea13.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="168.258" atv="17.519" rx='60'  linkedscene="scene_integration12" />
+		<hotspot name="spot2" url="skin/animatedhotspot_white.png" onloaded="do_crop_animation(64,64, 60);"   ath="-140.143" atv="1.153" onclick="looktohotspot(get(name),65);" />
+		<hotspot name="spot3" 
+			distorted="true"
+			css="font-size:76px; font-weight:bold; color:#FFFFFF;"
+			html="储物柜" 
+			bgcolor="0x000000"
+			bgalpha="0.5"
+			type="text"
+			padding="4 20"
+			scale="0.25"
+			ath="-132.370" atv="0.327" />
+	</scene>
 	<scene name="scene_officearea14" title="officearea14" onstart="" thumburl="panos/officearea14.tiles/thumb.jpg" lat="" lng="" heading="">
 
 		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
@@ -767,7 +576,22 @@
 			scale="0.25"
 			ath="-95" atv="0" />
 	</scene>
-
+	<scene name="scene_office15" title="office15" onstart="" thumburl="panos/office15.tiles/thumb.jpg" lat="" lng="" heading="">
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+		<preview url="panos/office15.tiles/preview.jpg" />
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="2560" tiledimageheight="2560">
+				<cube url="panos/office15.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1280" tiledimageheight="1280">
+				<cube url="panos/office15.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="640" tiledimageheight="640">
+				<cube url="panos/office15.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-64.784" atv="35.565" rx='60' linkedscene="scene_officearea14" />
+	</scene>
 	<scene name="scene_officearea17" title="officearea17" onstart="" thumburl="panos/officearea17.tiles/thumb.jpg" lat="" lng="" heading="">
 
 		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
@@ -813,7 +637,40 @@
 			scale="0.25"
 			ath="0" atv="0" />
 	</scene>
+	<scene name="scene_integration16" title="integration16" onstart="" thumburl="panos/integration16.tiles/thumb.jpg" lat="" lng="" heading="">
 
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/integration16.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="2560" tiledimageheight="2560">
+				<cube url="panos/integration16.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1280" tiledimageheight="1280">
+				<cube url="panos/integration16.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="640" tiledimageheight="640">
+				<cube url="panos/integration16.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-144.292" atv="29.625"  rx='60'  linkedscene="scene_officearea17" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="124.183" atv="25.525"  rx='60'  linkedscene="scene_officearea18" />
+		<hotspot name="spot3" style="skin_hotspotstyle" ath="6.411" atv="48.606"  rx='60'  linkedscene="scene_meetingroom1" />
+		<hotspot name="spot4" url="skin/animatedhotspot_white.png" onloaded="do_crop_animation(64,64, 60);"   ath="13" atv="-10" onclick="looktohotspot(get(name),65);" />
+		<hotspot name="spot5" 
+			distorted="true"
+			css="font-size:76px; font-weight:bold; color:#FFFFFF;"
+			html="Shanghai 上海" 
+			bgcolor="0x000000"
+			bgalpha="0.5"
+			type="text"
+			style="skin_hotspotstyle"
+			padding="4 20"
+			scale="0.25"
+			ath="30
+			" atv="-10" />
+	</scene>
 	<scene name="scene_officearea18" title="officearea18" onstart="" thumburl="panos/officearea18.tiles/thumb.jpg" lat="" lng="" heading="">
 
 		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
@@ -871,71 +728,52 @@
 			scale="0.25"
 			ath="87" atv="-6" />
 	</scene>
-
-	<scene name="scene_officearea23" title="officearea23" onstart="" thumburl="panos/officearea23.tiles/thumb.jpg" lat="" lng="" heading="">
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
-
-		<preview url="panos/officearea23.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512">
-			<level tiledimagewidth="2560" tiledimageheight="2560">
-				<cube url="panos/officearea23.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="1280" tiledimageheight="1280">
-				<cube url="panos/officearea23.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="640" tiledimageheight="640">
-				<cube url="panos/officearea23.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-		<hotspot name="spot1" style="skin_hotspotstyle" ath="127.353" atv="18.975" rx='60'  linkedscene="scene_officearea24" />
-		<hotspot name="spot2" style="skin_hotspotstyle" ath="-116.146" atv="8.739" rx='60'  linkedscene="scene_ebar22" />
-
-	</scene>
-
-	<scene name="scene_officearea24" title="officearea24" onstart="" thumburl="panos/officearea24.tiles/thumb.jpg" lat="" lng="" heading="">
+	<scene name="scene_integration19" title="integration19" onstart="" thumburl="panos/integration19.tiles/thumb.jpg" lat="" lng="" heading="">
 
 		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
 
-		<preview url="panos/officearea24.tiles/preview.jpg" />
+		<preview url="panos/integration19.tiles/preview.jpg" />
 
 		<image type="CUBE" multires="true" tilesize="512">
 			<level tiledimagewidth="2560" tiledimageheight="2560">
-				<cube url="panos/officearea24.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+				<cube url="panos/integration19.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
 			</level>
 			<level tiledimagewidth="1280" tiledimageheight="1280">
-				<cube url="panos/officearea24.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+				<cube url="panos/integration19.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
 			</level>
 			<level tiledimagewidth="640" tiledimageheight="640">
-				<cube url="panos/officearea24.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+				<cube url="panos/integration19.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
 			</level>
 		</image>
-		<hotspot name="spot1" style="skin_hotspotstyle" ath="-33.423" atv="31.178" rx='60'  linkedscene="scene_officearea23" />
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-14.112" atv="37.622" rz='-90' ry='60'  linkedscene="scene_restarea" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="65.930" atv="22.297"   rx='60'  linkedscene="scene_tearoom21" />
+		<hotspot name="spot3" url="skin/animatedhotspot_white.png" onloaded="do_crop_animation(64,64, 60);"   ath="-20.000" atv="-10.000" onclick="looktohotspot(get(name),65);" />
+		<hotspot name="spot4" 
+			distorted="true"
+			css="font-size:76px; font-weight:bold; color:#FFFFFF;"
+			html="Wellness Room 休闲室" 
+			bgcolor="0x000000"
+			bgalpha="0.5"
+			type="text"
+			style="skin_hotspotstyle"
+			padding="4 20"
+			scale="0.25"
+			ath="-3.000" atv="-11.000" />
 
+		<hotspot name="spot5" url="skin/animatedhotspot_white.png" onloaded="do_crop_animation(64,64, 60);"   ath="-70.000" atv="0.000" onclick="looktohotspot(get(name),65);" />
+		<hotspot name="spot6" 
+			distorted="true"
+			css="font-size:76px; font-weight:bold; color:#FFFFFF;"
+			html="储物柜" 
+			bgcolor="0x000000"
+			bgalpha="0.5"
+			type="text"
+			style="skin_hotspotstyle"
+			padding="4 20"
+			scale="0.25"
+			ath="-60.000" atv="-1.000" />
+		<hotspot name="spot7" style="skin_hotspotstyle" ath="164.107" atv="40.396" rx='60' linkedscene="scene_officearea18" />
 	</scene>
-
-	<scene name="scene_printingarea13" title="printingarea13" onstart="" thumburl="panos/printingarea13.tiles/thumb.jpg" lat="" lng="" heading="">
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
-
-		<preview url="panos/printingarea13.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512">
-			<level tiledimagewidth="2560" tiledimageheight="2560">
-				<cube url="panos/printingarea13.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="1280" tiledimageheight="1280">
-				<cube url="panos/printingarea13.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="640" tiledimageheight="640">
-				<cube url="panos/printingarea13.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-		<hotspot name="spot1" style="skin_hotspotstyle" ath="168.258" atv="17.519" rx='60'  linkedscene="scene_integration12" />
-
-	</scene>
-
 	<scene name="scene_restarea" title="restarea" onstart="" thumburl="panos/restarea.tiles/thumb.jpg" lat="" lng="" heading="">
 
 		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
@@ -956,7 +794,6 @@
 		<hotspot name="spot1" style="skin_hotspotstyle" ath="-151.139" atv="47.613" rx='60' linkedscene="scene_tearoom21" />
 
 	</scene>
-
 	<scene name="scene_tearoom21" title="tearoom21" onstart="" thumburl="panos/tearoom21.tiles/thumb.jpg" lat="" lng="" heading="">
 
 		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
@@ -1000,6 +837,289 @@
 			scale="0.25"
 			ath="-116.705" atv="-9.044" />
 	</scene>
+	<scene name="scene_ebar22" title="ebar22" onstart="" thumburl="panos/ebar22.tiles/thumb.jpg" lat="" lng="" heading="">
 
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
 
+		<preview url="panos/ebar22.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="2560" tiledimageheight="2560">
+				<cube url="panos/ebar22.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1280" tiledimageheight="1280">
+				<cube url="panos/ebar22.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="640" tiledimageheight="640">
+				<cube url="panos/ebar22.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="138.838" atv="34.895" rx='60'  linkedscene="scene_tearoom21" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="-144.879" atv="36.891"  rx='60'  linkedscene="scene_officearea23" />
+		<hotspot name="spot3" url="skin/animatedhotspot_white.png" onloaded="do_crop_animation(64,64, 60);"   ath="-13.653" atv="-6.428" onclick="looktohotspot(get(name),65);" />
+		<hotspot name="spot4" 
+			distorted="true"
+			css="font-size:76px; font-weight:bold; color:#FFFFFF;"
+			html="Mother’s Room 母婴室" 
+			bgcolor="0x000000"
+			bgalpha="0.5"
+			type="text"
+			padding="4 20"
+			scale="0.25"
+			ath="0" atv="-7"/>
+		<hotspot name="spot5"  url="skin/animatedhotspot_white.png" onloaded="do_crop_animation(64,64, 60);"   ath="56.276" atv="-0.618" onclick="looktohotspot(get(name),65);" />
+		<hotspot name="spot6" 
+			distorted="true"
+			css="font-size:76px; font-weight:bold; color:#FFFFFF;"
+			html="Minneapolis Meeting Room 明尼阿波利斯会议室" 
+			bgcolor="0x000000"
+			bgalpha="0.5"
+			type="text"
+			padding="4 20"
+			scale="0.25"
+			ath="85" atv="-0.729"/>
+	</scene>
+	<scene name="scene_officearea23" title="officearea23" onstart="" thumburl="panos/officearea23.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/officearea23.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="2560" tiledimageheight="2560">
+				<cube url="panos/officearea23.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1280" tiledimageheight="1280">
+				<cube url="panos/officearea23.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="640" tiledimageheight="640">
+				<cube url="panos/officearea23.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="127.353" atv="18.975" rx='60'  linkedscene="scene_officearea24" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="-116.146" atv="8.739" rx='60'  linkedscene="scene_ebar22" />
+
+	</scene>
+
+	<scene name="scene_officearea24" title="officearea24" onstart="" thumburl="panos/officearea24.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/officearea24.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="2560" tiledimageheight="2560">
+				<cube url="panos/officearea24.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1280" tiledimageheight="1280">
+				<cube url="panos/officearea24.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="640" tiledimageheight="640">
+				<cube url="panos/officearea24.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="spot3" style="skin_hotspotstyle" url="skin/animatedhotspot_white.png" onloaded="do_crop_animation(64,64, 60);"   ath="104.886" atv="-5.024" onclick="looktohotspot(get(name),65);" />
+		<hotspot name="spot4" 
+			distorted="true"
+			css="font-size:76px; font-weight:bold; color:#FFFFFF;"
+			html="Kerkrade Meeting Room 凯尔克拉德" 
+			bgcolor="0x000000"
+			bgalpha="0.5"
+			type="text"
+			padding="4 20"
+			scale="0.25"
+			ath="106.588" atv="-6.173"/>
+		<hotspot name="spot5" style="skin_hotspotstyle" url="skin/animatedhotspot_white.png" onloaded="do_crop_animation(64,64, 60);"   ath="148.767" atv="-4.866" onclick="looktohotspot(get(name),65);" />
+		<hotspot name="spot6" 
+			distorted="true"
+			css="font-size:76px; font-weight:bold; color:#FFFFFF;"
+			html="Hot-Desk Area 灵活办公室" 
+			bgcolor="0x000000"
+			bgalpha="0.5"
+			type="text"
+			padding="4 20"
+			scale="0.25"
+			ath="151.755" atv="-6.437"/>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-33.423" atv="31.178" rx='60'  linkedscene="scene_officearea23" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="-100.712" atv="19.540" rx='60' linkedscene="scene_frontdesk2" />
+	</scene>
+	<scene name="scene_integration9" title="integration9" onstart="" thumburl="panos/integration9.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/integration9.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="2560" tiledimageheight="2560">
+				<cube url="panos/integration9.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1280" tiledimageheight="1280">
+				<cube url="panos/integration9.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="640" tiledimageheight="640">
+				<cube url="panos/integration9.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-106.374" atv="12.265" rx='60' linkedscene="scene_integration11" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="-89.749" atv="27.368" rz='80' ry='60' linkedscene="scene_integration11" />
+		<hotspot name="spot3" url="skin/animatedhotspot_white.png" onloaded="do_crop_animation(64,64, 60);"   ath="-85.000" atv="-20.000" onclick="looktohotspot(get(name),65);" />
+		<hotspot name="spot4" 
+			distorted="true"
+			css="font-size:76px; font-weight:bold; color:#FFFFFF;"
+			html="China 中国" 
+			bgcolor="0x000000"
+			bgalpha="0.5"
+			type="text"
+			style="skin_hotspotstyle"
+			padding="4 20"
+			scale="0.25"
+			ath="-75.000" atv="-20.000" />
+
+		<hotspot name="spot5" url="skin/animatedhotspot_white.png" onloaded="do_crop_animation(64,64, 60);"   ath="30.000" atv="-20.000" onclick="looktohotspot(get(name),65);" />
+		<hotspot name="spot6" 
+			distorted="true"
+			css="font-size:76px; font-weight:bold; color:#FFFFFF;"
+			html="Coyol 科约尔" 
+			bgcolor="0x000000"
+			bgalpha="0.5"
+			type="text"
+			style="skin_hotspotstyle"
+			padding="4 20"
+			scale="0.25"
+			ath="45.000" atv="-20.000" />
+
+		<hotspot name="spot7" url="skin/animatedhotspot_white.png" onloaded="do_crop_animation(64,64, 60);"   ath="120.000" atv="-20.000" onclick="looktohotspot(get(name),65);" />
+		<hotspot name="spot8" 
+			distorted="true"
+			css="font-size:76px; font-weight:bold; color:#FFFFFF;"
+			html="Marlborough 马尔堡" 
+			bgcolor="0x000000"
+			bgalpha="0.5"
+			type="text"
+			style="skin_hotspotstyle"
+			padding="4 20"
+			scale="0.25"
+			ath="135.000" atv="-20.000" />
+		<hotspot name="spot9" style="skin_hotspotstyle" ath="72.721" atv="31.310" rx='60' linkedscene="scene_integration6" />
+	</scene>
+	<scene name="scene_meetingroom3" title="meetingroom3" onstart="" thumburl="panos/meetingroom3.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/meetingroom3.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="2560" tiledimageheight="2560">
+				<cube url="panos/meetingroom3.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1280" tiledimageheight="1280">
+				<cube url="panos/meetingroom3.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="640" tiledimageheight="640">
+				<cube url="panos/meetingroom3.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="10.783" atv="27.105" rx="60" linkedscene="scene_frontdesk2" />
+
+	</scene>
+	<scene name="scene_meetingroom1" title="meetingroom1" onstart="" thumburl="panos/meetingroom1.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/meetingroom1.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="2560" tiledimageheight="2560">
+				<cube url="panos/meetingroom1.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1280" tiledimageheight="1280">
+				<cube url="panos/meetingroom1.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="640" tiledimageheight="640">
+				<cube url="panos/meetingroom1.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-80.139" atv="26.756" rx='60'  linkedscene="scene_officearea18" />
+
+	</scene>
+	<scene name="scene_meetingroom0" title="meetingroom0" onstart="" thumburl="panos/meetingroom0.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/meetingroom0.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="2560" tiledimageheight="2560">
+				<cube url="panos/meetingroom0.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1280" tiledimageheight="1280">
+				<cube url="panos/meetingroom0.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="640" tiledimageheight="640">
+				<cube url="panos/meetingroom0.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-147.359" atv="54.851" rz='-15' rx='30' linkedscene="scene_integration3" />
+
+	</scene>
+	<scene name="scene_meetingroom4" title="meetingroom4" onstart="" thumburl="panos/meetingroom4.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/meetingroom4.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="2560" tiledimageheight="2560">
+				<cube url="panos/meetingroom4.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1280" tiledimageheight="1280">
+				<cube url="panos/meetingroom4.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="640" tiledimageheight="640">
+				<cube url="panos/meetingroom4.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-174.526" atv="52.256" rx='60' linkedscene="scene_officearea18" />
+
+	</scene>
+	<scene name="scene_meetingroom2" title="meetingroom2" onstart="" thumburl="panos/meetingroom2.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/meetingroom2.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="2560" tiledimageheight="2560">
+				<cube url="panos/meetingroom2.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1280" tiledimageheight="1280">
+				<cube url="panos/meetingroom2.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="640" tiledimageheight="640">
+				<cube url="panos/meetingroom2.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="114.942" atv="28.510" rx='60'  linkedscene="scene_officearea18" />
+
+	</scene>
+	<scene name="scene_meetingroom5" title="meetingroom5" onstart="" thumburl="panos/meetingroom5.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/meetingroom5.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="2560" tiledimageheight="2560">
+				<cube url="panos/meetingroom5.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1280" tiledimageheight="1280">
+				<cube url="panos/meetingroom5.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="640" tiledimageheight="640">
+				<cube url="panos/meetingroom5.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-179.054" atv="52.829" rx='60' linkedscene="scene_officearea18" />
+
+	</scene>
 </krpano>

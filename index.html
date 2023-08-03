@@ -45,6 +45,9 @@
         <!-- <h1>UI层</h1> -->
 		<img class="image-logo" src="images/logo.png" />
     </div>
+    <div id="home-layer" class="home-layer">
+        <img class="image-home" src="images/home.png" onclick="gotoHome()">
+    </div>
     <div id="ui-layer3" class="ui-layer3">
         <div class="dropdown-container">
             <div class="dropdown" >
@@ -125,8 +128,21 @@
                 var ui3 = document.getElementById("ui-layer3");
                 ui3.style.display = 'none';
                 embedpano({swf:"tour.swf", xml:"tour.xml", target:"pano", html5:"auto", mobilescale:1.0, passQueryParameters:true});
+                var homebtn = document.getElementById('home-layer');
+                homebtn.style.display = "flex";
             }
 		});
+
+        function gotoHome(){
+            var homebtn = document.getElementById('home-layer');
+            homebtn.style.display = "none";
+            var newDiv = document.getElementById("pano");
+            newDiv.style.display = "none"
+            var ui3 = document.getElementById("ui-layer3");
+            ui3.style.display = 'flex';
+            var pano = document.getElementById('krpanoSWFObject');
+            pano.remove();
+        }
 
         function on_chinese_callback(){
             var canvas = document.getElementById("canvas-layer");

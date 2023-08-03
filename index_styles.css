@@ -72,6 +72,16 @@
     z-index: 6; /* 设置UI层的堆叠顺序为最上面 *//* 设置UI层的背景颜色，这里使用带有透明度的白色 */
 }
 
+.home-layer{
+    position: absolute; /* 设置UI层为绝对定位，使得z-index属性生效 */
+    top: 0;
+    left: 7rem;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 5; /* 设置UI层的堆叠顺序为最上面 *//* 设置UI层的背景颜色，这里使用带有透明度的白色 */
+}
+
 .pano-layer{
     position: absolute; /* 设置UI层为绝对定位，使得z-index属性生效 */
     top: 0;
@@ -125,6 +135,14 @@ canvas {
     left: 0.1172rem; 
     width: 0.6836rem;
     height: auto;
+}
+
+.image-home{
+    position:absolute;
+    top: 0.1172rem;
+    left: 0.1172rem; 
+    width: 0.293rem;
+    height: 0.293rem;
 }
 
 .center-image {
