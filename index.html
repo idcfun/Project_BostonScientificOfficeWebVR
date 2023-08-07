@@ -6,7 +6,8 @@
     <link rel="stylesheet" type="text/css" href="styles.css">
     <link rel="stylesheet" type="text/css" href="index_styles.css">
     <link rel="manifest" href="manifest.json">
-    <title>Bostion Scientific Office WebVR</title>
+    <title>Boston Scientific Office WebVR</title>
+    <script src="jquery-3.3.1.min.js"></script>
     <script>
        
         function resize(){
@@ -29,7 +30,7 @@
    <div class="loading-container" id="loading-container">
         <div>
             <!-- 添加图片 -->
-            <div><img style="width: 3.043rem; height: auto;" src="images/loading-logo.png" alt="Center Image" class="center-image"></div>
+            <div><img style="width: 5.0313rem; height: auto;" src="images/loading-logo.png" alt="Center Image" class="center-image"></div>
             <!-- 进度条容器 -->
             <div class="progress-bar-container">
                 <!-- 进度条背景图片 -->
@@ -52,41 +53,42 @@
         <div class="dropdown-container">
             <div class="dropdown" >
                 <div style="display: flex;">
-                    <button class="dropbtn" onclick="toggleDropdown('dropdown1')">协同工作空间</button>
+                    <button class="dropbtn" key="Menu1" onclick="toggleDropdown('dropdown1')">协同工作空间</button>
                     <div style="margin-top:6px"><img  id="dropdown1-img" style=" padding: 2px;" src="images/Frame.png"></div> 
                 </div>
                 <div class="dropdown-content" id="dropdown1">
                     <div class="dropdown-content-menu">
-                        <a href="#" onclick='handleClick(0)'>会议室</a>
-                        <a href="#" onclick='handleClick(1)'>多功能会议室</a>
-                        <a href="#" onclick='handleClick(2)'>小组会议室</a>
-                        <a href="#" onclick='handleClick(3)'>电话间</a>
+                        <a href="javascrpit::void(0)" key="MeetingRoom" onclick='handleClick(0)'>会议室</a>
+                        <a href="javascrpit::void(0)" key="MultifunctionalSpace" onclick='handleClick(1)'>多功能会议室</a>
+                        <a href="javascrpit::void(0)" key="HuddleRoom" onclick='handleClick(2)'>小组会议室</a>
+                        <a href="javascrpit::void(0)" key="PhoneBooth" onclick='handleClick(3)'>电话间</a>
                     </div>
                     <div id="dropdown-content-p1" class="dropdown-content-p">
-                        大连办公室共有9间会议室，以GBS 9个位置命名，每间会议室均配备了智能预约管理系统，及电视屏幕，投影仪等硬件设施，配有智能照明系统，可通过墙壁上的控光功能设备多段式调节控制灯光，适合不同场景的及天气发生变化时的灯光照明需求，智能维持室内照明的稳定性。
+                         
                     </div>
                 </div>
               </div>
     
               <div class="dropdown" >
                 <div style="display: flex;">
-                    <button class="dropbtn" onclick="toggleDropdown('dropdown2')">创新空间办公区</button>
+                    <button class="dropbtn"  key="Menu2" onclick="toggleDropdown('dropdown2')">创新空间办公区</button>
                     <div style="margin-top:6px"><img id="dropdown2-img" style=" padding: 2px;" src="images/Frame.png"></div>
                 </div>
                 <div class="dropdown-content" id="dropdown2">
                     <div class="dropdown-content-menu">
-                        <a href="#" onclick='handleClick(4)'>灵活办公区域</a>
-                        <a href="#" onclick='handleClick(5)'>讨论区</a>
+                        <a href="javascrpit::void(0)"  key="HotDeskArea" onclick='handleClick(4)'>灵活办公区域</a>
+                        <a href="javascrpit::void(0)"  key="FunctionArea" onclick='handleClick(5)'>功能区域</a>
+                        <a href="javascrpit::void(0)"  key="Forum" onclick='handleClick(6)'>讨论区</a>
                     </div>
                     <div id="dropdown-content-p2" class="dropdown-content-p">
-                        灵活办公区域适合工作日程安排灵活的远程和销售同事，该区域配备了人体工学座椅，灵活的收纳储物，满足舒适办公的多种需求。
+                        
                     </div>
                 </div>
               </div>
         </div>
         <div class="centered-images">
             <img style="width: 0.1563rem; height: auto;"  src="images/enter.png">
-            <img style="width: 0.2813rem; height: auto;"  src="images/enter-word.png">
+            <img id="click_enter_word" style="width: 0.2813rem; height: auto;"  src="images/enter-word.png">
         </div>
     </div>
     <div id="ui-layer2" class="ui-layer2">
@@ -108,14 +110,57 @@
     <div class="background-layer"></div>
 	<div id="pano" class="pano-layer"></div>
 	<script>
-        var pArr = [
-            '大连办公室共有9间会议室，以GBS 9个位置命名，每间会议室均配备了智能预约管理系统，及电视屏幕，投影仪等硬件设施，配有智能照明系统，可通过墙壁上的控光功能设备多段式调节控制灯光，适合不同场景的及天气发生变化时的灯光照明需求，智能维持室内照明的稳定性。',
-            '连 培训室采用高效的功能分区和灵活的空间设计，可以作为独立会议室使用，也可以根据需求与马尔堡进行合并打通，作为可容纳约40人的大型会议室使用。另外多功能空间内的智能设备，满足线上线下多种会议需求。',
-            '一间小组会议室最多容纳4人，无需提前预定即可用作临时会议，适合人数较少快速召集的小组会议、跨部门协作或商务洽谈。',
-            '大连办公室共有8个电话间，无需预订均可使用，既可以满足2人小型会议功能也支持线上会议或线下快速讨论使用，电话间使用隔音玻璃，在通话过程中既可以保证通话的隐私也可以保证办公区域安静的工作环境。',
-            '灵活办公区域适合工作日程安排灵活的远程和销售同事，该区域配备了人体工学座椅，灵活的收纳储物，满足舒适办公的多种需求。',
-            '办公室设舒适温馨的开放讨论区，提供了交流探讨或稍事休憩的场所。鼓励合作、自由交换思想的环境氛围，更能激发工作热情，可根据个入需求自由选择工作或休息，随时随地轻松办公。另提供图书交换及借阅，静谧而又令人愉悦的舒缓氛围会给予喜欢读书的人更多的灵感启发并专注千自己的思绪和工作。'
-        ];
+        var lang="cn";
+        const arr_lang = {
+            "cn":{
+                "Menu1":'协同工作空间',
+                "Menu2":'灵活办公区域',
+                "MeetingRoom":'会议室',
+                "MultifunctionalSpace":'多功能会议室',
+                "HuddleRoom":'小组会议室',
+                "PhoneBooth":'电话间',
+                "HotDeskArea":'灵活办公区域',
+                "FunctionArea":'功能区域',
+                "Forum":'讨论区'
+            },
+            "en":{
+                "Menu1":'Collaborative Workspace',
+                "Menu2":'Innovation Spaces office area',
+                "MeetingRoom":'Meeting Room',
+                "MultifunctionalSpace":'Multifunctional Room',
+                "HuddleRoom":'Huddle Room',
+                "PhoneBooth":'Phone Booth',
+                "HotDeskArea":'Hot-Desk Area',
+                "FunctionArea":'Function Area',
+                "Forum":'Forum'
+            }
+        };
+
+        var langList = arr_lang[lang];
+        
+        const arr_lang_p = {
+            "cn":[
+                '大连办公室共有9间会议室，以GBS 9个位置命名，每间会议室均配备了智能预约管理系统，及电视屏幕，投影仪等硬件设施，配有智能照明系统，可通过墙壁上的控光功能设备多段式调节控制灯光，适合不同场景的及天气发生变化时的灯光照明需求，智能维持室内照明的稳定性。',
+                '连 培训室采用高效的功能分区和灵活的空间设计，可以作为独立会议室使用，也可以根据需求与马尔堡进行合并打通，作为可容纳约40人的大型会议室使用。另外多功能空间内的智能设备，满足线上线下多种会议需求。',
+                '大连办公室一共有3间小组会议室，一间小组会议室最多容纳4人，无需提前预定即可用作临时会议，适合人数较少快速召集的小组会议、跨部门协作或商务洽谈。',
+                '大连办公室共有8个电话间，无需预订均可使用，既可以满足2人小型会议功能也支持线上会议或线下快速讨论使用，电话间使用隔音玻璃，在通话过程中既可以保证通话的隐私也可以保证办公区域安静的工作环境。',
+                '灵活办公区域适合工作日程安排灵活的远程和销售同事，该区域配备了人体工学座椅，灵活的收纳储物，满足舒适办公的多种需求。',
+                '休闲室，IT吧台，母婴室，收发室的配备，满足办公之余各种员工需求',
+                '办公室设舒适温馨的开放讨论区，提供了交流探讨或稍事休憩的场所。鼓励合作、自由交换思想的环境氛围，更能激发工作热情，可根据个入需求自由选择工作或休息，随时随地轻松办公。另提供图书交换及借阅，静谧而又令人愉悦的舒缓氛围会给予喜欢读书的人更多的灵感启发并专注千自己的思绪和工作。'
+            ],
+            "en":[
+                'There are 9 meeting rooms in the Dalian office, which are configured in 9 locations of GBS. Each meeting room is equipped with an intelligent reservation management system, hardware facilities such as TV screens and projectors, and an intelligent lighting system, which can be controlled through the light control function on the wall. The equipment adjusts and controls the lighting in multiple stages, which is suitable for lighting needs in different scenes and when the weather changes, and intelligently maintains the stability of indoor lighting.',
+                'The LIAN training room adopts efficient functional partitioning and flexible space design. It can be used as an independent meeting room, or it can be combined with Marlborough according to needs and used as a large meeting room that can accommodate about 40 people. In addition, the smart devices in the multi-functional space can meet the needs of various online and offline meetings.',
+                'A huddle room can accommodate up to 4 people, and can be used as an ad hoc meeting without prior reservation, suitable for group meetings with a small number of people, cross-departmental collaboration or business negotiations.',
+                'The Dalian office has a total of 8 telephone rooms, which can be used without reservation. It can not only meet the function of small meetings for 2 people, but also support online meetings or offline quick discussions. The soundproof glass is used in the phone rooms to ensure the privacy of the calls during the call It can also ensure a quiet working environment in the office area.',
+                'The Hot-Desk area is suitable for Remote and Sales colleagues with flexible work schedules. This area is equipped with ergonomic chairs and flexible storage to meet various needs for comfortable office.',
+                'Leisure room, IT bar, mother and baby room, and mail room are equipped to meet the needs of various employees outside the office',
+                'The office is equipped with a comfortable and warm open discussion area, which provides a place for communication and discussion or a short rest. An environment that encourages cooperation and free exchange of ideas can stimulate enthusiasm for work. You can freely choose to work or rest according to your individual needs, and you can work easily anytime, anywhere. It also provides book exchange and borrowing. The quiet and pleasant soothing atmosphere will give people who like to read more inspiration and focus on their own thoughts and work.'
+            ]
+        }
+
+
+
 		// 监听来自PlayCanvas的消息
 		window.addEventListener('message', function(event) {
 			// 仅接受来自指定域的消息，以增强安全性
@@ -127,7 +172,12 @@
                 newDiv.style.display = "block"
                 var ui3 = document.getElementById("ui-layer3");
                 ui3.style.display = 'none';
-                embedpano({swf:"tour.swf", xml:"tour.xml", target:"pano", html5:"auto", mobilescale:1.0, passQueryParameters:true});
+                var canvasLayer = document.getElementById("canvas-layer");
+                canvasLayer.style.display = 'none';
+                if(lang==='en')
+                    embedpano({swf:"tour.swf", xml:"tour_en.xml", target:"pano", html5:"auto", mobilescale:1.0, passQueryParameters:true });
+                else if(lang==='cn')
+                    embedpano({swf:"tour.swf", xml:"tour.xml", target:"pano", html5:"auto", mobilescale:1.0, passQueryParameters:true });
                 var homebtn = document.getElementById('home-layer');
                 homebtn.style.display = "flex";
             }
@@ -142,23 +192,62 @@
             ui3.style.display = 'flex';
             var pano = document.getElementById('krpanoSWFObject');
             pano.remove();
+            var canvasLayer = document.getElementById("canvas-layer");
+            canvasLayer.style.display = 'flex';
         }
 
         function on_chinese_callback(){
-            var canvas = document.getElementById("canvas-layer");
-            canvas.style.display="flex";
-            var ui_layer2 = document.getElementById("ui-layer2");
-            var ui_layer3 = document.getElementById("ui-layer3");
-            ui_layer2.style.display = 'none'
-            ui_layer3.style.display = "flex";
+            lang = "cn";
+            langList = arr_lang[lang];
+            var cn_arr = arr_lang_p[lang];
+            var drop_p1 = document.getElementById('dropdown-content-p1');
+            drop_p1.innerText = cn_arr[0];
+            var drop_p2 = document.getElementById('dropdown-content-p2');
+            drop_p2.innerText = cn_arr[4];
+            var click_enter_word = document.getElementById('click_enter_word');
+            console.log(click_enter_word);
+            click_enter_word.setAttribute('src', 'images/enter-word.png');
+            change_lang();
+            enter_home();
         }
 
         function on_english_callback(){
+           
+            lang = "en";
+            langList = arr_lang[lang];
+            var cn_arr = arr_lang_p[lang];
+            var drop_p1 = document.getElementById('dropdown-content-p1');
+            drop_p1.innerText = cn_arr[0];
+            var drop_p2 = document.getElementById('dropdown-content-p2');
+            drop_p2.innerText = cn_arr[4];
+            var click_enter_word = document.getElementById('click_enter_word');
+            console.log(click_enter_word);
+            click_enter_word.setAttribute('src', 'images/enter-word_en.png');
+            change_lang();
+            enter_home();
+        }
+
+        function change_lang(){
+            var aitems = document.getElementsByTagName('a');
+            for(i = 0; i < aitems.length; i++){
+                if(aitems[i].hasAttribute('key')){
+                    aitems[i].text = langList[aitems[i].getAttribute('key')];
+                }
+            }
+
+            var dropbtns = document.getElementsByClassName('dropbtn');
+            for(i = 0; i < dropbtns.length; i++){
+                if(dropbtns[i].hasAttribute('key')){
+                    dropbtns[i].innerHTML = langList[dropbtns[i].getAttribute('key')];
+                }
+            }
+        }
+
+        function enter_home(){
             var canvas = document.getElementById("canvas-layer");
             canvas.style.display="flex";
             var ui_layer2 = document.getElementById("ui-layer2");
             var ui_layer3 = document.getElementById("ui-layer3");
-            console.log(ui_layer2);
             ui_layer2.style.display = 'none';
             ui_layer3.style.display = "flex";
         }
@@ -178,9 +267,11 @@
                 {     
                     var dropdown2 = document.getElementById('dropdown2');
                     dropdown2.style.display='none';
+                    handleClick(0);
                 }
                 else if(dropdownId==='dropdown2')
                 {
+                    handleClick(4);
                     var dropdown1 = document.getElementById('dropdown1');
                     dropdown1.style.display='none';
                 }
@@ -190,20 +281,31 @@
         function handleClick(index) {
             // 在点击时执行的操作，根据传递的标识参数执行不同的逻辑
             var message = {
-            msgType: 'billboard',
-            index: index
+                msgType: 'billboard',
+                index: index,
+                lang:lang
             };
 
+            var cn_arr = arr_lang_p[lang];
+            var aitems = document.getElementsByTagName('a');
+            for(i = 0; i < aitems.length;i++){
+                aitems[i].style.opacity = 0.7;
+               aitems[i].style.borderBottom  = "0px solid white";
+            }
+
+            aitems[index].style.opacity = 1.0;
+            aitems[index].style.borderBottom  = "1px solid white";
             if(index<4){
                 var drop_p1 = document.getElementById('dropdown-content-p1');
-                drop_p1.innerText = pArr[index];
+                drop_p1.innerText = cn_arr[index];
             }else{
                 var drop_p2 = document.getElementById('dropdown-content-p2');
-                drop_p2.innerText = pArr[index];
+                drop_p2.innerText = cn_arr[index];
             }
 
             window.parent.postMessage(message, "/");
         }
+
 	</script>
 	<script src="tour.js"></script>
     <script src="__modules__.js"></script>
