@@ -7,7 +7,6 @@
     <link rel="stylesheet" type="text/css" href="index_styles.css">
     <link rel="manifest" href="manifest.json">
     <title>Boston Scientific Office WebVR</title>
-    <script src="jquery-3.3.1.min.js"></script>
     <script>
        
         function resize(){
@@ -306,6 +305,29 @@
             window.parent.postMessage(message, "/");
         }
 
+        function isPortrait() {
+            return window.matchMedia("(orientation: portrait)").matches;
+        }
+
+        function handleOrientationChange() {
+            var loadcontainer = document.getElementById('loading-container');
+            if (isPortrait()) {
+                loadcontainer.style.display = "flex";
+            } else {
+                loadcontainer.style.display = "none";
+            }
+
+            var width = window.innerWidth;
+            var height = window.innerHeight;
+            if(width < 880){
+                loadcontainer.style.display = "flex";
+            }
+            else{
+                loadcontainer.style.display = "none";
+            }
+        }
+        window.addEventListener('resize', handleOrientationChange);
+        window.addEventListener('orientationchange', handleOrientationChange);
 	</script>
 	<script src="tour.js"></script>
     <script src="__modules__.js"></script>

@@ -46,6 +46,12 @@ pc.script.createLoadingScreen(function (app) {
             if(value >= 1){
                 console.log(value);
                 loadingcontainer.style.display = "none";
+                var loadcontainer = document.getElementById('loading-container');
+                if(window.matchMedia("(orientation: portrait)").matches){
+                    loadcontainer.style.display = "flex";
+                }
+                else
+                    loadcontainer.style.display = "none";
             }
             // if(value>=1 && loadingcontainer.style.display !== "none");
             // {   
