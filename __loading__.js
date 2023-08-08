@@ -36,6 +36,8 @@ pc.script.createLoadingScreen(function (app) {
     var setProgress = function (value) {
         var bar = document.getElementById('progressBar');
         var loadingcontainer = document.getElementById('loading-container');
+        var progressbar = document.getElementById('progressbar');
+        var portraitwarn = document.getElementById('portrait-warn');
         var ui2 = document.getElementById('ui-layer2');
         var ui1 = document.getElementById('ui-layer1');
         ui1.style.display = "flex";
@@ -44,14 +46,32 @@ pc.script.createLoadingScreen(function (app) {
             value = Math.min(1, Math.max(0, value));
             bar.style.width = value * 100 + '%';
             if(value >= 1){
-                console.log(value);
-                loadingcontainer.style.display = "none";
-                var loadcontainer = document.getElementById('loading-container');
-                if(window.matchMedia("(orientation: portrait)").matches){
-                    loadcontainer.style.display = "flex";
+                portraitwarn.style.display = "flex";
+                progressbar.style.display = 'none';
+                var width = window.innerWidth;
+                var height = window.innerHeight;
+                function isMobileDevice() {
+                    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
                 }
-                else
-                    loadcontainer.style.display = "none";
+                function isPortrait() {
+                    return window.matchMedia("(orientation: portrait)").matches;
+                }
+                if(isMobileDevice())
+                {
+                    if (isPortrait()) {
+                        loadcontainer.style.display = "flex";
+                    } else {
+                        loadcontainer.style.display = "none";
+                    }
+                }
+                else{
+                    if(width < 1160){
+                    loadcontainer.style.display = "flex";
+                    }
+                    else{
+                        loadcontainer.style.display = "none";
+                    }
+                }
             }
             // if(value>=1 && loadingcontainer.style.display !== "none");
             // {   

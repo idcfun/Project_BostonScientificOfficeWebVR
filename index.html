@@ -27,17 +27,30 @@
 <body>
 	<!-- 加载层 -->
    <div class="loading-container" id="loading-container">
-        <div>
+        <div class="loading-top-div">
+            <div><img style="width: 2.2rem; height: auto;" src="images/loading-company-logo.png" alt="Center Image"></div>
+            <div><img style="width: 6.031300000000002rem; height: auto; margin-top: 0.2rem;" src="images/loading-company-name.png" alt="Center Image"></div>
+        </div>
+        <div class="loading-bottom-div">
             <!-- 添加图片 -->
-            <div><img style="width: 5.0313rem; height: auto;" src="images/loading-logo.png" alt="Center Image" class="center-image"></div>
+            <div id="portrait-warn" style="align-items: center;
+            justify-content: center;
+            display: none;
+            flex-direction: column;transform: scale(1.0);
+            margin-top: 2.0rem;"
+            >
+                <img style="width: 0.7rem;height: auto;" src="images/portrait-warn-img.png">
+                <img style="width: 3.0rem;height: auto;" src="images/portrait-warn-word.png">
+            </div>
             <!-- 进度条容器 -->
-            <div class="progress-bar-container">
+            <div id="progressbar" class="progress-bar-container">
+                
                 <!-- 进度条背景图片 -->
                 <div class="progress-bar-background"></div>
                 <!-- 进度条前景图片 -->
                 <div class="progress-bar-foreground" id="progressBar"></div>
             </div>
-        </div>
+        </div> 
     </div>
 	<!-- UI层 -->
     <div id="ui-layer1" class="ui-layer1">
@@ -148,12 +161,12 @@
                 '办公室设舒适温馨的开放讨论区，提供了交流探讨或稍事休憩的场所。鼓励合作、自由交换思想的环境氛围，更能激发工作热情，可根据个入需求自由选择工作或休息，随时随地轻松办公。另提供图书交换及借阅，静谧而又令人愉悦的舒缓氛围会给予喜欢读书的人更多的灵感启发并专注千自己的思绪和工作。'
             ],
             "en":[
-                'There are 9 meeting rooms in the Dalian office, which are configured in 9 locations of GBS. Each meeting room is equipped with an intelligent reservation management system, hardware facilities such as TV screens and projectors, and an intelligent lighting system, which can be controlled through the light control function on the wall. The equipment adjusts and controls the lighting in multiple stages, which is suitable for lighting needs in different scenes and when the weather changes, and intelligently maintains the stability of indoor lighting.',
+                'There are 9 meeting rooms in the Dalian office, which are named after 9 locations of GBS. Each meeting room is equipped with an intelligent reservation management system, hardware facilities such as TV screens and projectors, and an intelligent lighting system, which can be controlled through the light control function on the wall. The equipment adjusts and controls the lighting in multiple stages, which is suitable for lighting needs in different scenes and when the weather changes, and intelligently maintains the stability of indoor lighting.',
                 'The LIAN training room adopts efficient functional partitioning and flexible space design. It can be used as an independent meeting room, or it can be combined with Marlborough according to needs and used as a large meeting room that can accommodate about 40 people. In addition, the smart devices in the multi-functional space can meet the needs of various online and offline meetings.',
                 'A huddle room can accommodate up to 4 people, and can be used as an ad hoc meeting without prior reservation, suitable for group meetings with a small number of people, cross-departmental collaboration or business negotiations.',
                 'The Dalian office has a total of 8 telephone rooms, which can be used without reservation. It can not only meet the function of small meetings for 2 people, but also support online meetings or offline quick discussions. The soundproof glass is used in the phone rooms to ensure the privacy of the calls during the call It can also ensure a quiet working environment in the office area.',
                 'The Hot-Desk area is suitable for Remote and Sales colleagues with flexible work schedules. This area is equipped with ergonomic chairs and flexible storage to meet various needs for comfortable office.',
-                'Leisure room, IT bar, mother and baby room, and mail room are equipped to meet the needs of various employees outside the office',
+                "Break room, e-bar, mother's room and mail room are equipped to meet the various needs of employees",
                 'The office is equipped with a comfortable and warm open discussion area, which provides a place for communication and discussion or a short rest. An environment that encourages cooperation and free exchange of ideas can stimulate enthusiasm for work. You can freely choose to work or rest according to your individual needs, and you can work easily anytime, anywhere. It also provides book exchange and borrowing. The quiet and pleasant soothing atmosphere will give people who like to read more inspiration and focus on their own thoughts and work.'
             ]
         }
@@ -311,23 +324,68 @@
 
         function handleOrientationChange() {
             var loadcontainer = document.getElementById('loading-container');
-            if (isPortrait()) {
-                loadcontainer.style.display = "flex";
-            } else {
-                loadcontainer.style.display = "none";
-            }
-
+            
             var width = window.innerWidth;
             var height = window.innerHeight;
-            if(width < 880){
-                loadcontainer.style.display = "flex";
+            
+            if(isMobileDevice())
+            {
+                if (isPortrait()) {
+                    loadcontainer.style.display = "flex";
+                } else {
+                    loadcontainer.style.display = "none";
+                }
             }
             else{
-                loadcontainer.style.display = "none";
+                if(width < 1160){
+                loadcontainer.style.display = "flex";
+                }
+                else{
+                    loadcontainer.style.display = "none";
+                }
             }
+           
         }
+
+        function isMobileDevice() {
+            return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        }
+
         window.addEventListener('resize', handleOrientationChange);
         window.addEventListener('orientationchange', handleOrientationChange);
+
+        const portraitwarn = document.getElementById('portrait-warn');
+        //  设置初始缩放比例和缩放步长
+        let scale = 1;
+        const step = 0.01;
+        var scaleToMax = true;
+        // 缩放循环函数
+        function scaleLoop() {
+            if(scaleToMax===true && scale >= 1.1)
+            {  
+                scaleToMax = false;
+            }
+            else if(scaleToMax===false && scale <= 1.0)
+            {
+                scaleToMax = true;
+            }
+            if(scaleToMax)
+            {
+                scale+=step;
+            }    
+            else
+            {
+                   scale-=step;
+            }
+
+            // 设置div的缩放属性
+            portraitwarn.style.transform = `scale(${scale})`;
+            // 使用requestAnimationFrame调用scaleLoop函数，创建动画循环
+            requestAnimationFrame(scaleLoop);
+        }
+
+        // 开始动画循环
+        scaleLoop();
 	</script>
 	<script src="tour.js"></script>
     <script src="__modules__.js"></script>

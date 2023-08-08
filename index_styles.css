@@ -15,13 +15,37 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('images/loading-bg.jpg'); /* 设置背景图片 */
+    background-image: url('images/loading.png'); /* 设置背景图片 */
     background-size: cover;
-    display: flex;
+    display: block;
     justify-content: center;
     align-items: center;
     z-index: 99; /* 确保加载层在最上层 */
 }
+
+.loading-top-div {
+    position: absolute;
+    top: 10%;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .loading-bottom-div {
+    position: absolute;
+    bottom: 10%;
+    left: 0;
+    width: 100%;
+    height: 70%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+  }
 
 /* 设置日志信息的样式 */
 .logo {
@@ -155,12 +179,13 @@ canvas {
     z-index: 1; 
 }
 
+
  /* 设置进度条容器的样式 */
 .progress-bar-container {
     position: absolute;
     top:100px;
     width: 3.9063rem;;
-    height: 0.0391rem;
+    height: 0.07rem;
     border: 1px solid #ccc;
     border-radius: 5px;
     overflow: hidden;
