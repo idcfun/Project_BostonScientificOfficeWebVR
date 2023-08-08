@@ -59,17 +59,17 @@ pc.script.createLoadingScreen(function (app) {
                 if(isMobileDevice())
                 {
                     if (isPortrait()) {
-                        loadcontainer.style.display = "flex";
+                        loadingcontainer.style.display = "flex";
                     } else {
-                        loadcontainer.style.display = "none";
+                        loadingcontainer.style.display = "none";
                     }
                 }
                 else{
                     if(width < 1160){
-                    loadcontainer.style.display = "flex";
+                        loadingcontainer.style.display = "flex";
                     }
                     else{
-                        loadcontainer.style.display = "none";
+                        loadingcontainer.style.display = "none";
                     }
                 }
             }
