@@ -56,6 +56,7 @@ pc.script.createLoadingScreen(function (app) {
                 function isPortrait() {
                     return window.matchMedia("(orientation: portrait)").matches;
                 }
+                
                 if(isMobileDevice())
                 {
                     if (isPortrait()) {
