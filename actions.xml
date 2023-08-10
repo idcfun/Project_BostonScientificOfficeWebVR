@@ -1,0 +1,23 @@
+<krpano>
+	<action name="test1">
+        <!-- // 获取当前场景对象
+        // 获取当前场景下的热点列表
+        var hotspots = currentScene.hotspots;
+
+        // 遍历热点列表并执行操作
+        for (var i = 0; i < hotspots.count; i++) {
+            var hotspot = hotspots.getItemAt(i);
+            var hotspotName = hotspot.name;
+            var hotspotX = hotspot.position.x;
+            var hotspotY = hotspot.position.y;
+            var hotspotType = hotspot.type;
+            
+            // 在这里你可以执行其他操作，比如输出信息
+            krpano.call("trace('Hotspot Name: " + hotspotName + "')");
+            krpano.call("trace('Hotspot X: " + hotspotX + "')");
+            krpano.call("trace('Hotspot Y: " + hotspotY + "')");
+            krpano.call("trace('Hotspot Type: " + hotspotType + "')");
+        } -->
+
+	</action>
+</krpano>

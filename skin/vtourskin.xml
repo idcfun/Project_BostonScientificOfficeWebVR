@@ -1170,5 +1170,4 @@
 		tween(view.hlookat, calc(view.hlookat + 100.0 + 45.0*random), distance(100,0.8));
 		skin_deeplinking_update_url(1.0);
 	</action>
-
 </krpano>

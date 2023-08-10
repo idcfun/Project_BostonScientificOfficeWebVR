@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
     <!-- <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover' /> -->
     <meta charset='utf-8'>
@@ -59,6 +59,7 @@
 		<img class="image-logo" src="images/logo.png" />
     </div>
     <div id="home-layer" class="home-layer">
+        <img id="switch_lang_button" class="image-lang-switch" src="images/lang_cn.png" onclick="switchLangurage()">
         <img class="image-home" src="images/home.png" onclick="gotoHome()">
     </div>
     <div id="ui-layer3" class="ui-layer3">
@@ -102,6 +103,8 @@
             <img style="width: 0.1563rem; height: auto;"  src="images/enter.png">
             <img id="click_enter_word" style="width: 0.2813rem; height: auto;"  src="images/enter-word.png">
         </div>
+        
+        <img id="switch_lang_t_button" class="button_left" src="images/lang_cn_t.png" onclick="switchLangurage()">
     </div>
     <div id="ui-layer2" class="ui-layer2">
         <!-- 中文按钮 -->
@@ -171,8 +174,6 @@
             ]
         }
 
-
-
 		// 监听来自PlayCanvas的消息
 		window.addEventListener('message', function(event) {
 			// 仅接受来自指定域的消息，以增强安全性
@@ -187,9 +188,16 @@
                 var canvasLayer = document.getElementById("canvas-layer");
                 canvasLayer.style.display = 'none';
                 if(lang==='en')
+                {
                     embedpano({swf:"tour.swf", xml:"tour_en.xml", target:"pano", html5:"auto", mobilescale:1.0, passQueryParameters:true });
+                }    
                 else if(lang==='cn')
+                {
                     embedpano({swf:"tour.swf", xml:"tour.xml", target:"pano", html5:"auto", mobilescale:1.0, passQueryParameters:true });
+                }   
+                // embedpano({swf:"tour.swf", xml:"tour.xml", target:"pano", html5:"auto", mobilescale:1.0, passQueryParameters:true ,onready:function(krpano){
+                //     krpano.call("setlang("+lang+")");     
+                // }});
                 var homebtn = document.getElementById('home-layer');
                 homebtn.style.display = "flex";
             }
@@ -208,24 +216,44 @@
             canvasLayer.style.display = 'flex';
         }
 
+        function switchLangurage(){
+            var homebtn = document.getElementById('home-layer');
+            homebtn.style.display = "none";
+            var newDiv = document.getElementById("pano");
+            newDiv.style.display = "none"
+            var ui3 = document.getElementById("ui-layer3");
+            ui3.style.display = 'none';
+            var pano = document.getElementById('krpanoSWFObject');
+            if(pano)
+                pano.remove();
+            var canvasLayer = document.getElementById("canvas-layer");
+            canvasLayer.style.display = 'none';
+            var ui_layer2 = document.getElementById("ui-layer2");
+            ui_layer2.style.display = 'flex';
+
+            var message = {
+                msgType: 'billboard',
+                index: -1,
+                lang:lang
+            };
+            window.parent.postMessage(message, "/");
+        }
+
         function on_chinese_callback(){
             lang = "cn";
-            langList = arr_lang[lang];
-            var cn_arr = arr_lang_p[lang];
-            var drop_p1 = document.getElementById('dropdown-content-p1');
-            drop_p1.innerText = cn_arr[0];
-            var drop_p2 = document.getElementById('dropdown-content-p2');
-            drop_p2.innerText = cn_arr[4];
-            var click_enter_word = document.getElementById('click_enter_word');
-            console.log(click_enter_word);
-            click_enter_word.setAttribute('src', 'images/enter-word.png');
-            change_lang();
-            enter_home();
+            changeWidgetLang(lang,'images/enter-word.png');
+            changeLangurage();
+            enterGame();
         }
 
         function on_english_callback(){
-           
             lang = "en";
+            changeWidgetLang(lang,'images/enter-word_en.png');
+            changeLangurage();
+            enterGame();
+        }
+
+        function changeWidgetLang(lang, imageurl){
             langList = arr_lang[lang];
             var cn_arr = arr_lang_p[lang];
             var drop_p1 = document.getElementById('dropdown-content-p1');
@@ -233,13 +261,22 @@
             var drop_p2 = document.getElementById('dropdown-content-p2');
             drop_p2.innerText = cn_arr[4];
             var click_enter_word = document.getElementById('click_enter_word');
-            console.log(click_enter_word);
-            click_enter_word.setAttribute('src', 'images/enter-word_en.png');
-            change_lang();
-            enter_home();
+            click_enter_word.setAttribute('src', imageurl);
+            var switch_lang_button = document.getElementById('switch_lang_button');
+            var switch_lang_t_button = document.getElementById('switch_lang_t_button');
+            if(lang==='en')
+            {
+                switch_lang_button.setAttribute('src', 'images/lang_en.png');
+                switch_lang_t_button.setAttribute('src', 'images/lang_en_t.png');
+            }
+            else
+            {
+                switch_lang_button.setAttribute('src', 'images/lang_cn.png');
+                switch_lang_t_button.setAttribute('src', 'images/lang_cn_t.png');
+            }
         }
 
-        function change_lang(){
+        function changeLangurage(){
             var aitems = document.getElementsByTagName('a');
             for(i = 0; i < aitems.length; i++){
                 if(aitems[i].hasAttribute('key')){
@@ -255,7 +292,7 @@
             }
         }
 
-        function enter_home(){
+        function enterGame(){
             var canvas = document.getElementById("canvas-layer");
             canvas.style.display="flex";
             var ui_layer2 = document.getElementById("ui-layer2");
@@ -337,8 +374,8 @@
                 }
             }
             else{
-                if(width < 1160){
-                loadcontainer.style.display = "flex";
+                if(width < 1100){
+                    loadcontainer.style.display = "flex";
                 }
                 else{
                     loadcontainer.style.display = "none";
@@ -348,7 +385,8 @@
         }
 
         function isMobileDevice() {
-            return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+            var result = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+            return result;
         }
 
         window.addEventListener('resize', handleOrientationChange);
