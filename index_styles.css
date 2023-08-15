@@ -49,18 +49,34 @@
      margin-top: 0.2rem;
   }
 
+  .loading-portrait-img{
+    width: 0.5rem;height: auto;
+  }
+
+  .loading-portrait-word{
+    width: 2.8rem;height: auto;
+  }
+
     /* 在屏幕宽度大于等于600px时，子元素横向排列 */
     @media (min-width: 750px) {
-        .loading-top-div {
+        /* .loading-top-div {
             flex-direction: row;
-        }
+        } */
 
         .loading-img-companylogo{
-            width: 1.2rem;
+            width: 200px
           }
         
           .loading-img-companylogo2{
-            width: 5.031rem; 
+            width: 603.1px; 
+          }
+
+          .loading-portrait-img{
+            width: 60px;
+          }
+        
+          .loading-portrait-word{
+            width: 280px;
           }
     }
 
