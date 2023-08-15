@@ -23,6 +23,8 @@
     z-index: 99; /* 确保加载层在最上层 */
 }
 
+
+
 .loading-top-div {
     position: absolute;
     top: 10%;
@@ -34,6 +36,33 @@
     display: flex;
     flex-direction: column;
   }
+
+  .loading-img-companylogo{
+    width: 2.20rem;
+    height: auto;
+    margin-top: 0.2rem;
+  }
+
+  .loading-img-companylogo2{
+    width: 6.031rem; 
+    height: auto;
+     margin-top: 0.2rem;
+  }
+
+    /* 在屏幕宽度大于等于600px时，子元素横向排列 */
+    @media (min-width: 750px) {
+        .loading-top-div {
+            flex-direction: row;
+        }
+
+        .loading-img-companylogo{
+            width: 1.2rem;
+          }
+        
+          .loading-img-companylogo2{
+            width: 5.031rem; 
+          }
+    }
 
   .loading-bottom-div {
     position: absolute;
